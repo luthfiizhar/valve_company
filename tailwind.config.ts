@@ -15,15 +15,14 @@ export default {
     screens: {
       sm: "640px",
       md: "768px",
-      lg: "960px",
-      xl: "1200px",
+      lg: "1200px",
     },
     extend: {
       colors: {
-        primary: "#0C4D70",
+        primary: "#545454",
         accent: {
-          DEFAULT: "#CF2E2E",
-          hover: "#0096FF",
+          DEFAULT: "#E0D1D1",
+          hover: "#1F1F1F",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",

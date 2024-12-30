@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 const links = [
   { name: "home", path: "/" },
   { name: "products", path: "/products" },
-  { name: "stocklist", path: "/stocklist" },
   { name: "about us", path: "/about" },
+  { name: "reources", path: "/resources" },
   { name: "contact", path: "/contact" },
 ];
 
@@ -20,8 +20,8 @@ const NavigationBar = () => {
             key={index}
             href={item.path}
             className={`${
-              item.path === pathName && "text-accent border-b-2 border-accent"
-            } capitalize font-medium hover:text-accent transition-all`}>
+              item.path === pathName && "text-primary font-[700]"
+            } capitalize text-primary font-light hover:text-primary hover:font-bold transition-all text-[22px]`}>
             {item.name}
           </Link>
         );

@@ -10,12 +10,12 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "15px",
+      padding: "36px",
     },
     screens: {
       sm: "640px",
-      md: "768px",
-      lg: "1200px",
+      md: "800px",
+      lg: "1360px",
     },
     extend: {
       colors: {

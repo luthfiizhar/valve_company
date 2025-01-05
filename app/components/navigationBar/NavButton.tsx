@@ -12,6 +12,7 @@ const links = [
 
 const NavigationBar = () => {
   const pathName = usePathname();
+
   return (
     <nav className="flex gap-8">
       {links.map((item, index) => {
@@ -20,7 +21,9 @@ const NavigationBar = () => {
             key={index}
             href={item.path}
             className={`${
-              item.path === pathName && "text-primary font-[700]"
+              (item.path === pathName ||
+                pathName.split("/")[1] === item.path.replace("/", "")) &&
+              "text-primary font-bold"
             } capitalize text-primary font-light hover:text-primary hover:font-bold transition-all text-[22px]`}>
             {item.name}
           </Link>

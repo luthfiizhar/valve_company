@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface ProductProps {
   id: number;
@@ -28,8 +29,10 @@ const ProductComponent = ({ id, title, desc, imageUrl }: ProductProps) => {
         <div className="px-[20px] text-[18px] text-primary font-medium text-left whitespace-pre-line lg:px-0 lg:text-[20px]">
           {desc}
         </div>
-        <Button className="text-[16px] lg:text-[24px] w-[176px] lg:w-[250px]">
-          Learn More
+        <Button
+          className="text-[16px] lg:text-[24px] w-[176px] lg:w-[250px]"
+          asChild>
+          <Link href={`/products/${encodeURIComponent(id)}`}>Learn More</Link>
         </Button>
       </div>
     </div>

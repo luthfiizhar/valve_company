@@ -6,12 +6,13 @@ const links = [
   { name: "home", path: "/" },
   { name: "products", path: "/products" },
   { name: "about us", path: "/about" },
-  { name: "reources", path: "/resources" },
+  { name: "resources", path: "/resources" },
   { name: "contact", path: "/contact" },
 ];
 
 const NavigationBar = () => {
   const pathName = usePathname();
+  console.log(pathName);
 
   return (
     <nav className="flex gap-8">
@@ -23,7 +24,7 @@ const NavigationBar = () => {
             className={`${
               (item.path === pathName ||
                 pathName.split("/")[1] === item.path.replace("/", "")) &&
-              "text-primary font-bold"
+              "text-primary font-semibold"
             } capitalize text-primary font-light hover:text-primary hover:font-bold transition-all text-[22px]`}>
             {item.name}
           </Link>

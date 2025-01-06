@@ -10,9 +10,9 @@ export default function Home() {
       <HeroSection></HeroSection>
       <WhyUsSection></WhyUsSection>
       <OurProductSection></OurProductSection>
-      <section className="h-full">
+      {/* <section className="h-full">
         <div className="container max-auto"></div>
-      </section>
+      </section> */}
     </>
   );
 }

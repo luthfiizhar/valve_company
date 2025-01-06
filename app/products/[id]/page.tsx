@@ -30,7 +30,7 @@ async function DetailProduct({ params }: { params: Promise<{ id: string }> }) {
 
   return (
     <div className="container w-full flex flex-col gap-[20px]">
-      <SectionTitle title={details["title"]}></SectionTitle>
+      <SectionTitle title={details["title"]} isOneLine={true}></SectionTitle>
       <div className="w-full h-[267px] rounded-[30px] lg:h-[700px] bg-slate-500"></div>
       <div className="flex flex-col gap-[20px] lg:flex-row lg:gap-[32px] lg:items-center">
         <div className="text-primary text-[16px] font-medium whitespace-pre-line lg:text-[24px]">

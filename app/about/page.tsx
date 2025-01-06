@@ -4,7 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 const AboutUsPage = () => {
   return (
     <div className="container w-full flex flex-col gap-[24px] items-center lg:items-start">
-      <SectionTitle title="About Us"></SectionTitle>
+      <SectionTitle title="About Us" isOneLine={true}></SectionTitle>
       <div className="w-full h-[300px] bg-slate-400 rounded-[30px] lg:h-[712px]"></div>
       <span className="whitespace-pre-line text-primary text-[16px] font-medium lg:text-[24px]">
         {

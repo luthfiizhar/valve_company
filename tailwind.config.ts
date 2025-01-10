@@ -17,6 +17,9 @@ export default {
       md: "800px",
       lg: "1360px",
     },
+    fontFamily: {
+      primary: "var(--font-rubik)",
+    },
     extend: {
       colors: {
         primary: "#545454",

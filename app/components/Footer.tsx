@@ -56,10 +56,8 @@ const Footer = () => {
           <div className="flex items-center gap-[24px] ">
             {iconsMobile.map((icon, index) => {
               return (
-                <div className="p-[7px] rounded-[4px] bg-[#313131]">
-                  <span key={index} className="">
-                    {icon.icon}
-                  </span>
+                <div key={index} className="p-[7px] rounded-[4px] bg-[#313131]">
+                  <span className="">{icon.icon}</span>
                 </div>
               );
             })}
@@ -93,10 +91,10 @@ const Footer = () => {
               <div className="flex items-center gap-[24px] ">
                 {iconsDesktop.map((icon, index) => {
                   return (
-                    <div className="p-[7px] rounded-[6px] bg-[#313131]">
-                      <span key={index} className="">
-                        {icon.icon}
-                      </span>
+                    <div
+                      key={index}
+                      className="p-[7px] rounded-[6px] bg-[#313131]">
+                      <span className="">{icon.icon}</span>
                     </div>
                   );
                 })}

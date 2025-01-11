@@ -4,6 +4,7 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "./components/navigationBar/NavigationBar";
 import Footer from "./components/Footer";
+import Transition from "./components/Transition";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${rubik.className}antialiased`}>
         <NavigationBar></NavigationBar>
-        {children}
+        <Transition>{children}</Transition>
         <Footer></Footer>
       </body>
     </html>

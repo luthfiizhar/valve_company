@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import SectionTitle from "../SectionTitle";
 import ProductComponent from "./ProductComponent";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const products = [
   {
@@ -55,25 +58,38 @@ const products = [
   },
 ];
 
+const cardVariants = {
+  initial: { y: 50, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+};
+
 const OurProductSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <section className="pt-[36px]">
       <div className="container w-full flex flex-col gap-[64px] items-center lg:items-start">
         <div className="py-[10px] lg:py-0">
-          <SectionTitle title="Our Product"></SectionTitle>
+          <SectionTitle title="Our Product" isOneLine={false}></SectionTitle>
         </div>
-        <div className="flex flex-col gap-[32px] w-screen lg:w-full">
+        <ul ref={ref} className="flex flex-col gap-[32px] w-screen lg:w-full">
           {products.map((item, index) => {
             return (
-              <ProductComponent
+              <motion.li
                 key={index}
-                id={index + 1}
-                title={item.title}
-                desc={item.desc}
-                imageUrl={item.imageUrl}></ProductComponent>
+                variants={cardVariants}
+                initial="initial"
+                animate={isInView ? "animate" : "initial"}
+                transition={{ duration: 0.3, delay: index * 0.4 }}>
+                <ProductComponent
+                  id={index + 1}
+                  title={item.title}
+                  desc={item.desc}
+                  imageUrl={item.imageUrl}></ProductComponent>
+              </motion.li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

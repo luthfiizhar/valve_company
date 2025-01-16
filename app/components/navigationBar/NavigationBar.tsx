@@ -1,6 +1,5 @@
 import React from "react";
 import NavButton from "./NavButton";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
 
@@ -10,8 +9,8 @@ export default function NavigationBar() {
       <div className="h-full mx-auto flex justify-between items-center px-[16px]">
         <div className="h-[36px] w-[42px] lg:h-[64px] lg:w-[64px]">
           <Image
-            src={"/images/navbar_logo.png"}
-            className="object-cover h-[36px] w-[42px]  lg:w-[62px] lg:h-[64px]"
+            src={"/images/logo_black.svg"}
+            className="object-contain h-[36px] w-[42px]  lg:w-[64px] lg:h-[64px]"
             alt=""
             width={36}
             height={42}></Image>

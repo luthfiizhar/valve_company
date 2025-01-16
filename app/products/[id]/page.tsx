@@ -4,6 +4,7 @@ import SectionTitle from "@/app/components/SectionTitle";
 import ProductInfoTitle from "./ProductInfoTitle";
 import ProductSpecComponent from "./ProductSpecComponent";
 import ProductInfoDownload from "./ProductInfoDownload";
+import Image from "next/image";
 
 // export async function generateStaticParams() {
 //   const posts = await fetch("http://localhost:3000/products").then((res) =>
@@ -26,17 +27,35 @@ async function DetailProduct({ params }: { params: Promise<{ id: string }> }) {
   let spec: { label: string; text: string }[] = details["spec"];
   let productInfo: { title: string; downloadURL: string }[] =
     details["productInfo"];
+  let bigImage = details["largeImages"];
+  let smallImage = details["smallImages"];
   //   console.log(spec);
 
   return (
     <div className="container w-full flex flex-col gap-[20px]">
       <SectionTitle title={details["title"]} isOneLine={true}></SectionTitle>
-      <div className="w-full h-[267px] rounded-[30px] lg:h-[700px] bg-slate-500"></div>
+      <div className="w-full h-[267px] rounded-[30px] lg:h-[700px] bg-slate-500">
+        <div className="relative w-full h-full content-center bg-clip-content">
+          <Image
+            src={bigImage}
+            fill
+            className="object-cover  rounded-[30px]"
+            alt=""></Image>
+        </div>
+      </div>
       <div className="flex flex-col gap-[20px] lg:flex-row lg:gap-[32px] lg:items-center">
         <div className="text-primary text-[16px] font-medium whitespace-pre-line lg:text-[24px]">
           {details["desc"]}
         </div>
-        <div className="bg-slate-400 w-full h-[212px] rounded-[30px] lg:h-[420px] lg:w-[460px] lg:flex-none"></div>
+        <div className="bg-slate-400 w-full h-[212px] rounded-[30px] lg:h-[420px] lg:w-[460px] lg:flex-none">
+          <div className="relative w-full h-full content-center bg-clip-content">
+            <Image
+              src={smallImage}
+              fill
+              className="object-cover  rounded-[30px]"
+              alt=""></Image>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col gap-[12px]">
         <ProductInfoTitle text="Spesification"></ProductInfoTitle>

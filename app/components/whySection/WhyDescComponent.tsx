@@ -15,7 +15,6 @@ const WhyDescComponent = ({ title, desc, icon }: WhyDescInterface) => {
           <Image
             src={icon}
             quality={100}
-            sizes="100vw"
             fill
             alt=""
             className="object-contain"></Image>

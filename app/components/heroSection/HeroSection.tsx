@@ -48,7 +48,6 @@ const HeroSection = () => {
                   alt=""
                   // layout="fill"
                   placeholder="blur"
-                  sizes="100vw"
                   quality={100}
                   fill
                   className="object-contain transition-opacity"></Image>{" "}

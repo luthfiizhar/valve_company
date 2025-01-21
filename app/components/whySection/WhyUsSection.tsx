@@ -10,14 +10,17 @@ const whyLists = [
   {
     title: "Trusted",
     desc: "Precision, reliability, and on-time delivery you can count on",
+    icon: "/images/icons/trust.png",
   },
   {
     title: "High Quality",
     desc: "Engineered for durability, tested for performance, and built to exceed industry standards",
+    icon: "/images/icons/high-quality.png",
   },
   {
     title: "Fast",
     desc: "Quick turnaround, rapid shipping, and on-time delivery to keep your projects moving",
+    icon: "/images/icons/clock.png",
   },
 ];
 
@@ -48,7 +51,8 @@ const WhyUsSection = () => {
                 transition={{ duration: 0.3, delay: index * 0.4 }}>
                 <WhyDescComponent
                   title={item.title}
-                  desc={item.desc}></WhyDescComponent>
+                  desc={item.desc}
+                  icon={item.icon}></WhyDescComponent>
               </motion.li>
             );
           })}

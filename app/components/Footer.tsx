@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
+import appstoreImage from "@/public/images/icons/app_store.png";
+import playstoreImage from "@/public/images/icons/play_store.png";
 
 const iconsMobile = [
   {
@@ -64,8 +66,24 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex w-full justify-center items-center gap-[10px]">
-          <div className=" w-[165px] h-[45px] bg-slate-300"></div>
-          <div className=" w-[165px] h-[45px] bg-slate-300"></div>
+          <div className=" w-[165px] h-[45px] bg-slate-300">
+            <div className="relative w-full h-full">
+              <Image
+                src={playstoreImage}
+                alt=""
+                fill
+                className="object-cover"></Image>
+            </div>
+          </div>
+          <div className=" w-[165px] h-[45px] bg-slate-300">
+            <div className="relative w-full h-full">
+              <Image
+                src={appstoreImage}
+                alt=""
+                fill
+                className="object-cover"></Image>
+            </div>
+          </div>
         </div>
         <div className="items-center text-center">
           <span className="text-[16px]">
@@ -79,8 +97,8 @@ const Footer = () => {
             <div className="lg:w-[322px] lg:items-center lg:flex lg:flex-col lg:gap-[18px]">
               <div className="h-[36px] w-[42px] lg:h-[64px] lg:w-[64px]">
                 <Image
-                  src={"/images/footer_logo.png"}
-                  className="object-cover h-[36px] w-[42px]  lg:w-[62px] lg:h-[64px]"
+                  src={"/images/logo_white.svg"}
+                  className="object-contain h-[36px] w-[42px]  lg:w-[62px] lg:h-[64px]"
                   alt=""
                   width={36}
                   height={42}></Image>
@@ -133,7 +151,26 @@ const Footer = () => {
                 <span className="text-[24px] text-[#FFFFFF] font-semibold">
                   Get Our App
                 </span>
-                <div className="flex flex-col gap-[16px]"></div>
+                <div className="flex flex-col gap-[16px]">
+                  <div className=" w-[180px] h-[60px]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={playstoreImage}
+                        alt=""
+                        fill
+                        className="object-cover"></Image>
+                    </div>
+                  </div>
+                  <div className=" w-[180px] h-[60px]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={appstoreImage}
+                        alt=""
+                        fill
+                        className="object-cover"></Image>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

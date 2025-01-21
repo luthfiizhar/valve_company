@@ -92,8 +92,8 @@ const detailProductData: any = [
         downloadURL: "",
       },
     ],
-    largeImages: [],
-    smallImages: [],
+    largeImages: "/images/big_pictures/Split_body_b.jpg",
+    smallImages: "/images/small_pictures/split.jpg",
   },
   {
     id: "2",

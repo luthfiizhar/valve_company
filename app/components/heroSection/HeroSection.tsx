@@ -1,5 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import Statistic from "./Statistic";
+import Image from "next/image";
+import heroImage from "@/public/images/hero_image.jpg";
+import { AnimatePresence, motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -30,7 +34,28 @@ const HeroSection = () => {
             Contact Us
           </Button>
         </div>
-        <div className="order-1 lg:order-2 max-w-full h-[240px] lg:max-w-[480px] lg:min-w-[480px] lg:h-auto bg-fuchsia-400"></div>
+        <AnimatePresence>
+          <div className="order-1 lg:order-2 block max-w-full h-[240px] lg:max-w-[480px] lg:min-w-[480px] lg:h-auto lg:content-center">
+            <div className="relative h-full w-full content-center object-contain">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { delay: 0.5, duration: 0.4, ease: "easeInOut" },
+                }}>
+                <Image
+                  src={heroImage}
+                  alt=""
+                  // layout="fill"
+                  placeholder="blur"
+                  sizes="100vw"
+                  quality={100}
+                  fill
+                  className="object-contain transition-opacity"></Image>{" "}
+              </motion.div>{" "}
+            </div>
+          </div>
+        </AnimatePresence>
       </div>
     </section>
   );

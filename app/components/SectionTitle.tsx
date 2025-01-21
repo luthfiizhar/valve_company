@@ -21,7 +21,7 @@ const SectionTitle = ({ title, isOneLine }: SectionTitleProps) => {
       <div className="text-primary text-center lg:text-left text-[28px] lg:text-[36px] font-semibold">
         {title}
       </div>
-      <div className={`${isOneLine && "hidden"}"w-[100px] lg:hidden"`}>
+      <div className={`${isOneLine && "block"} w-[100px] lg:hidden"`}>
         {" "}
         <hr
           style={{

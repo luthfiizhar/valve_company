@@ -22,8 +22,15 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
-  const { name, description, spec, prod, bigImagesURL, smallImagesURL }: any =
-    data;
+  const {
+    name,
+    description,
+    spec,
+    prod,
+    bigImagesURL,
+    smallImagesURL,
+    highlightImageURL,
+  }: any = data;
 
   try {
     var specification = spec as Prisma.JsonArray;
@@ -37,6 +44,7 @@ export async function POST(request: NextRequest) {
         productInfo,
         bigImagesURL,
         smallImagesURL,
+        highlightImageURL,
       },
     });
     return NextResponse.json({

@@ -3,55 +3,55 @@ import SectionTitle from "../components/SectionTitle";
 import ResourcesComponent from "./ResourcesComponent";
 
 const userManualList = [
-  { text: "Split Body Ball Valve", downloadURL: "" },
-  { text: "Fully Welded Ball Valve", downloadURL: "" },
-  { text: "Top Entry Bal Valve", downloadURL: "" },
-  { text: "Gate Valve", downloadURL: "" },
-  { text: "Swing Check Valve", downloadURL: "" },
-  { text: "Globe Valve", downloadURL: "" },
-  { text: "Plug Valve", downloadURL: "" },
-  { text: "Instrumental Valve", downloadURL: "" },
-  { text: "Tube Fittings", downloadURL: "" },
-  { text: "API 602 Forged Valve", downloadURL: "" },
+  { text: "Split Body Ball Valve", downloadURL: "", imageURL: "" },
+  { text: "Fully Welded Ball Valve", downloadURL: "", imageURL: "" },
+  { text: "Top Entry Bal Valve", downloadURL: "", imageURL: "" },
+  { text: "Gate Valve", downloadURL: "", imageURL: "" },
+  { text: "Swing Check Valve", downloadURL: "", imageURL: "" },
+  { text: "Globe Valve", downloadURL: "", imageURL: "" },
+  { text: "Plug Valve", downloadURL: "", imageURL: "" },
+  { text: "Instrumental Valve", downloadURL: "", imageURL: "" },
+  { text: "Tube Fittings", downloadURL: "", imageURL: "" },
+  { text: "API 602 Forged Valve", downloadURL: "", imageURL: "" },
 ];
 const catalogueList = [
-  { text: "Split Body Ball Valve", downloadURL: "" },
-  { text: "Fully Welded Ball Valve", downloadURL: "" },
-  { text: "Top Entry Bal Valve", downloadURL: "" },
-  { text: "Gate Valve", downloadURL: "" },
-  { text: "Swing Check Valve", downloadURL: "" },
-  { text: "Globe Valve", downloadURL: "" },
-  { text: "Plug Valve", downloadURL: "" },
-  { text: "Instrumental Valve", downloadURL: "" },
-  { text: "Tube Fittings", downloadURL: "" },
-  { text: "API 602 Forged Valve", downloadURL: "" },
+  { text: "Split Body Ball Valve", downloadURL: "", imageURL: "" },
+  { text: "Fully Welded Ball Valve", downloadURL: "", imageURL: "" },
+  { text: "Top Entry Bal Valve", downloadURL: "", imageURL: "" },
+  { text: "Gate Valve", downloadURL: "", imageURL: "" },
+  { text: "Swing Check Valve", downloadURL: "", imageURL: "" },
+  { text: "Globe Valve", downloadURL: "", imageURL: "" },
+  { text: "Plug Valve", downloadURL: "", imageURL: "" },
+  { text: "Instrumental Valve", downloadURL: "", imageURL: "" },
+  { text: "Tube Fittings", downloadURL: "", imageURL: "" },
+  { text: "API 602 Forged Valve", downloadURL: "", imageURL: "" },
 ];
 const quickSheetList = [
-  { text: "Split Body Ball Valve", downloadURL: "" },
-  { text: "Fully Welded Ball Valve", downloadURL: "" },
-  { text: "Top Entry Bal Valve", downloadURL: "" },
-  { text: "Gate Valve", downloadURL: "" },
-  { text: "Swing Check Valve", downloadURL: "" },
-  { text: "Globe Valve", downloadURL: "" },
-  { text: "Plug Valve", downloadURL: "" },
-  { text: "Instrumental Valve", downloadURL: "" },
-  { text: "Tube Fittings", downloadURL: "" },
-  { text: "API 602 Forged Valve", downloadURL: "" },
+  { text: "Split Body Ball Valve", downloadURL: "", imageURL: "" },
+  { text: "Fully Welded Ball Valve", downloadURL: "", imageURL: "" },
+  { text: "Top Entry Bal Valve", downloadURL: "", imageURL: "" },
+  { text: "Gate Valve", downloadURL: "", imageURL: "" },
+  { text: "Swing Check Valve", downloadURL: "", imageURL: "" },
+  { text: "Globe Valve", downloadURL: "", imageURL: "" },
+  { text: "Plug Valve", downloadURL: "", imageURL: "" },
+  { text: "Instrumental Valve", downloadURL: "", imageURL: "" },
+  { text: "Tube Fittings", downloadURL: "", imageURL: "" },
+  { text: "API 602 Forged Valve", downloadURL: "", imageURL: "" },
 ];
 const certificateList = [
-  { text: "ISO 15848-1", downloadURL: "" },
-  { text: "6D-0714 2026", downloadURL: "" },
-  { text: "F-273H1 H1", downloadURL: "" },
-  { text: "PED CE 2014 68", downloadURL: "" },
-  { text: "ISO 9001 2015", downloadURL: "" },
+  { text: "ISO 15848-1", downloadURL: "", imageURL: "" },
+  { text: "6D-0714 2026", downloadURL: "", imageURL: "" },
+  { text: "F-273H1 H1", downloadURL: "", imageURL: "" },
+  { text: "PED CE 2014 68", downloadURL: "", imageURL: "" },
+  { text: "ISO 9001 2015", downloadURL: "", imageURL: "" },
 ];
 
 const ResourcePage = () => {
   return (
     <div className="container w-full flex flex-col  gap-[24px] items-center lg:items-start">
-      <div className="flex flex-col gap-[28px] items-start">
+      <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
         <SectionTitle title="User Manual" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-start">
+        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px]">
           {userManualList.map((item, index) => {
             return (
               <ResourcesComponent
@@ -62,9 +62,9 @@ const ResourcePage = () => {
           })}
         </div>
       </div>
-      <div className="flex flex-col gap-[28px] items-start">
+      <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
         <SectionTitle title="Catalogue" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-start">
+        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px]">
           {catalogueList.map((item, index) => {
             return (
               <ResourcesComponent
@@ -75,9 +75,9 @@ const ResourcePage = () => {
           })}
         </div>
       </div>
-      <div className="flex flex-col gap-[28px] items-start">
+      <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
         <SectionTitle title="Quick Sheet" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-start">
+        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px] ">
           {quickSheetList.map((item, index) => {
             return (
               <ResourcesComponent
@@ -88,9 +88,9 @@ const ResourcePage = () => {
           })}
         </div>
       </div>
-      <div className="flex flex-col gap-[28px] items-start">
+      <div className="flex flex-col gap-[28px] items-center lg:items-start w-full">
         <SectionTitle title="Certification" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-start">
+        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center  lg:justify-center lg:gap-x-[48px]">
           {certificateList.map((item, index) => {
             return (
               <ResourcesComponent

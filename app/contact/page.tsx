@@ -9,16 +9,17 @@ import {
   HiOutlineLocationMarker,
 } from "react-icons/hi";
 import ContactInfoComponent from "./ContactInfoComponent";
-
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import { FormEvent } from "react";
+import { useToast } from "@/hooks/use-toast";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectGroup,
+//   SelectItem,
+//   SelectLabel,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -40,6 +41,28 @@ const infoList = [
 ];
 
 const ContactPage = () => {
+  const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
+  async function handleSubmit(event: any) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    const response = await fetch("/api/mail", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data["status"] === 200) {
+      toast({
+        title: "Thank You",
+        description: "Your message has been sent.",
+      });
+      formRef.current!.reset();
+    }
+  }
   return (
     <div className="container w-full flex flex-col gap-[24px] items-start">
       <div className="hidden text-[#363940] font-semibold items-start w-full lg:block">
@@ -54,7 +77,7 @@ const ContactPage = () => {
             <div className="w-[428px] h-[400px] bg-slate-500">
               <div className="w-full h-full object-contain">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.49131655638!2d106.6647040366169!3d-6.229720928595884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1737033869717!5m2!1sid!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.2231345198907!2d28.919855525515715!3d40.181847419902425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca15d8a562c521%3A0x218a8ccffb84c83d!2sKURVALF%20MAKINA%20LTD%20STI!5e0!3m2!1sen!2str!4v1736786385709!5m2!1sen!2str"
                   width="600"
                   height="450"
                   // allowfullscreen=""
@@ -77,7 +100,10 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <form className="flex flex-col w-full gap-[24px] items-center lg:w-[560px] lg:order-1">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="flex flex-col w-full gap-[24px] items-center lg:w-[560px] lg:order-1">
           {/* <Select>
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select Topic" />

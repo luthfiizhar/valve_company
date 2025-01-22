@@ -27,7 +27,7 @@ export default {
           DEFAULT: "#E0D1D1",
           hover: "#1F1F1F",
         },
-        background: "var(--background)",
+        background: "#F5F9FC",
         foreground: "var(--foreground)",
       },
       borderRadius: {

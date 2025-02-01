@@ -1,5 +1,6 @@
 import React from "react";
 import { RxDownload } from "react-icons/rx";
+import Link from "next/link";
 
 interface ProductInfoDownloadProps {
   title: string;
@@ -15,7 +16,9 @@ const ProductInfoDownload = ({
       <span className="text-[16px] text-[#000000] font-semibold lg:text-[24px]">
         {title}
       </span>
-      <RxDownload size={24}></RxDownload>
+      <Link href={downloadURL} target="_blank" download>
+        <RxDownload size={24}></RxDownload>
+      </Link>
     </div>
   );
 };

@@ -2,8 +2,8 @@
 import React from "react";
 import SectionTitle from "../SectionTitle";
 import ProductComponent from "./ProductComponent";
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+// import { useRef } from "react";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 // const products = [

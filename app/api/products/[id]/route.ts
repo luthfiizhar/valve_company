@@ -37,3 +37,58 @@ export async function GET(
     });
   }
 }
+
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const data = await request.json();
+  const {
+    name,
+    description,
+    spec,
+    productInfo,
+    bigImagesURL,
+    smallImagesURL,
+    highlightImageURL,
+    catalogueCoverImageURL,
+    catalogueFileURL,
+    quicksheetCoverImageURL,
+    quicksheetFileURL,
+    userManualCoverImageURL,
+    userManualFileURL,
+  }: any = data;
+  try {
+    const id = (await params).id;
+    const result = await prisma.product.update({
+      where: { id: id },
+      data: {
+        name: name,
+        description: description,
+        specification: spec,
+        productInfo: productInfo,
+        bigImagesURL: bigImagesURL,
+        smallImagesURL: smallImagesURL,
+        highlightImageURL: highlightImageURL,
+        catalogueCoverImageURL: catalogueCoverImageURL,
+        catalogueFileURL: catalogueFileURL,
+        quicksheetCoverImageURL: quicksheetCoverImageURL,
+        quicksheetFileURL: quicksheetFileURL,
+        userManualCoverImageURL: userManualCoverImageURL,
+        userManualFileURL: userManualFileURL,
+      },
+    });
+    return NextResponse.json({
+      status: 200,
+      message: "success",
+      data: result,
+    });
+  } catch (error) {
+    return NextResponse.json({
+      status: 500,
+      message: "failed",
+      error: error,
+      data: {},
+    });
+  }
+}

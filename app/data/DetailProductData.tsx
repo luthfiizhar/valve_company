@@ -289,7 +289,7 @@ const detailProductData: any = [
   },
   {
     id: "4",
-    title: "Gate Valves",
+    title: "API 600 Gate Valves",
     desc: "Valve used to control the flow of liquids and gases in pipelines, operating by raising or lowering a gate to either fully allow or completely block the flow. It is ideal for on/off applications, providing minimal resistance when fully open and a tight seal when closed. Typically made from durable materials like cast iron, steel, or brass, gate valves are common in industries such as water treatment, oil and gas, and power stations.",
     spec: [
       {
@@ -457,7 +457,7 @@ const detailProductData: any = [
   },
   {
     id: "6",
-    title: "Globe Valves",
+    title: "API 600 Globe Valves",
     desc: "Valve used to regulate the flow of liquids or gases in a pipeline. It features a spherical body with an internal baffle that directs the flow through a seat and a movable plug or disc. The valve operates by raising or lowering the plug to control the flow rate, making it ideal for applications requiring precise flow regulation. Globe valves are commonly used in systems where throttling is necessary, such as in water treatment, HVAC systems, and chemical processing. While they provide excellent flow control, they can create higher resistance to flow compared to other valve types, leading to potential pressure drops",
     spec: [
       {
@@ -630,69 +630,25 @@ const detailProductData: any = [
   {
     id: "8",
     title: "Instrumentation Valve",
-    desc: "Valve used in automated control systems to regulate fluid flow based on signals from instruments or sensors. Common in industries like oil and gas or chemical processing, these valves respond to feedback from control systems to ensure precise flow regulation. They can be operated pneumatically, electrically, or hydraulically, providing accuracy and reliability in process control",
+    desc: "Instrumentation valves are precision-engineered solutions designed for accurate control and reliable performance in industrial applications. Manufactured from high-grade stainless steel, such as SS316 and SS304, these valves offer excellent corrosion resistance, making them ideal for demanding environments, including chemical processing, oil and gas, pharmaceuticals, and food and beverage industries. The valves provide high precision, leak-tight sealing, and exceptional durability, ensuring long-term performance and safety in critical industrial processes. With their ability to withstand extreme pressures and temperatures, they are a dependable choice for applications where reliability is paramount.",
     spec: [
       {
-        label: "Valve Size",
-        text: '1/2" - 24"',
-      },
-      {
-        label: "Valve Type",
-        text: "Lubricated",
+        label: "Temperature Range",
+        text: 'These valves can operate effectively in a temperature range of -196°C (-321°F) to 648°C (1200°F), depending on the valve type and material specifications.',
       },
       {
         label: "Pressure Class",
-        text: "ANSI 150 / 300 / 600 / 900",
+        text: "Available in pressure ratings such as Class 150, 300, 600, and 800, with some valves rated up to 6000 PSI, ensuring suitability for high-pressure applications.",
       },
       {
-        label: "End Connection",
-        text: "RF / RTJ / BW",
+        label: "Connection Types",
+        text: "Options include threaded (NPT), socket weld, tube fittings, and flanged connections to accommodate various instrumentation systems.",
       },
       {
-        label: "Bore",
-        text: "Full Bore / Reduced Bore",
+        label: "Application",
+        text: "These valves are widely used for flow regulation, isolation, and monitoring in instrumentation lines, gas distribution systems, and process control setups.",
       },
-      {
-        label: "Operator",
-        text: "Lever / Gear / Actuator",
-      },
-      {
-        label: "Material",
-        text: "Carbon Steal / Stainless Steel / Duplex / Alloy Steel",
-      },
-      {
-        label: "Operating Temperature",
-        text: "Standard / High",
-      },
-      {
-        label: "Leakage Class",
-        text: "FCI 70-2 Class IV",
-      },
-      {
-        label: "Design Standard",
-        text: "ASME B16.34 /  API 6D / ISO 14313",
-      },
-      {
-        label: "Face to Face Standard",
-        text: "ASME B16.10",
-      },
-      {
-        label: "End Connection Standard",
-        text: "ASME B16.10",
-      },
-      {
-        label: "Test Standard",
-        text: "API 6D / API 598",
-      },
-      {
-        label: "Fire Safe Standard",
-        text: "API 607 / ISO 10497 / API 6FA",
-      },
-
-      {
-        label: "Certification",
-        text: "EN 10204 3.1 - 3.2 / ISO 15848 Fugitive Emission / 2014-68-EU PED/ SIL Capable / IP 67 (Gearbox)",
-      },
+      
     ],
     productInfo: [
       {
@@ -718,69 +674,29 @@ const detailProductData: any = [
   {
     id: "9",
     title: "Tube Fittings",
-    desc: "Tube fittings are designed to provide a leak-free connection and applied in chemical, petrochemical, oil refineries, shipbuilding, power generation and pulp and papers.  The double ferrule design is a mechanism used for sealing and gripping tubing.  Through the mechanical advantage and geometry, the tube fitting can overcome the variations in materials, wall thickness and hardness to provide an excellent seal performance. The tube fitting consists of four parts: body, front ferrule, back ferrule and nut. The two ferrules separate sealing and tube gripping function and achieve excellent leak-free performance.",
+    desc: "Tube fittings are essential components designed for leak-tight connections in a wide range of industrial and instrumentation applications. Manufactured from high-quality materials such as stainless steel (SS316, SS304), brass, and alloy steel, these fittings ensure durability, corrosion resistance, and reliable performance in demanding environments. Tube fittings are designed for ease of installation, ensuring a secure and leak-proof connection without the need for welding. Their robust construction and compatibility with high-pressure and high-temperature environments make them a trusted solution for critical operations in industrial processes.",
     spec: [
       {
-        label: "Valve Size",
-        text: '1/2" - 24"',
-      },
-      {
-        label: "Valve Type",
-        text: "Lubricated",
-      },
-      {
         label: "Pressure Class",
-        text: "ANSI 150 / 300 / 600 / 900",
+        text: 'Tube fittings are capable of handling pressure ratings up to 6,000 PSI, with some designs suitable for ultra-high-pressure applications reaching 10,000 PSI.',
       },
       {
-        label: "End Connection",
-        text: "RF / RTJ / BW",
+        label: "Temperature Range",
+        text: "Engineered to operate in a wide temperature range, from -196°C (-321°F) to 648°C (1200°F), depending on material and seal type.",
       },
       {
-        label: "Bore",
-        text: "Full Bore / Reduced Bore",
+        label: "Connection Types",
+        text: "Available in a variety of connection styles, including compression fittings, double ferrule fittings, flare fittings, and threaded connections such as NPT, BSPT, and SAE.",
       },
       {
-        label: "Operator",
-        text: "Lever / Gear / Actuator",
+        label: "Size",
+        text: "Offered in a range of sizes, typically from 1/16 inch to 2 inches, to accommodate different tubing and piping systems.",
       },
       {
-        label: "Material",
-        text: "Carbon Steal / Stainless Steel / Duplex / Alloy Steel",
+        label: "Application",
+        text: "Ideal for use in instrumentation lines, gas distribution systems, hydraulic systems, chemical processing, and oil and gas industries.",
       },
-      {
-        label: "Operating Temperature",
-        text: "Standard / High",
-      },
-      {
-        label: "Leakage Class",
-        text: "FCI 70-2 Class IV",
-      },
-      {
-        label: "Design Standard",
-        text: "ASME B16.34 /  API 6D / ISO 14313",
-      },
-      {
-        label: "Face to Face Standard",
-        text: "ASME B16.10",
-      },
-      {
-        label: "End Connection Standard",
-        text: "ASME B16.10",
-      },
-      {
-        label: "Test Standard",
-        text: "API 6D / API 598",
-      },
-      {
-        label: "Fire Safe Standard",
-        text: "API 607 / ISO 10497 / API 6FA",
-      },
-
-      {
-        label: "Certification",
-        text: "EN 10204 3.1 - 3.2 / ISO 15848 Fugitive Emission / 2014-68-EU PED/ SIL Capable / IP 67 (Gearbox)",
-      },
+      
     ],
     productInfo: [
       {
@@ -799,6 +715,7 @@ const detailProductData: any = [
         title: "Tr Quick Sheet PDF",
         downloadURL: "",
       },
+      
     ],
     largeImages: [],
     smallImages: [],
@@ -806,68 +723,23 @@ const detailProductData: any = [
   {
     id: "10",
     title: "API 602 Forged Valves",
-    desc: "High-performance valves designed to meet the specifications of the American Petroleum Institute (API) 602 standard. These valves are forged, meaning they are made by shaping metal under high pressure, resulting in strong, durable components. Primarily used in the oil and gas industry, API 602 forged valves are known for their ability to withstand high pressures and temperatures. They are typically used in smaller pipelines and critical applications where reliability and performance are crucial. These valves are available in various types, including gate, globe, and ball valves, and are highly resistant to corrosion and wear.",
+    desc: "API 602 forged valves are compact, high-performance valves specifically designed for high-pressure and high-temperature industrial applications. These valves comply with API 602 standards, which define strict requirements for durability, reliability, and precision in smaller valve sizes, typically ranging from 1/4 inch to 4 inches. They are widely used in industries such as oil and gas, petrochemical, power generation, and refinery operations. API 602 forged valves are the preferred choice for critical applications due to their robust construction, leak-tight performance, and ability to handle extreme pressure and temperature conditions effectively.",
     spec: [
       {
-        label: "Valve Size",
-        text: '1/2" - 24"',
+        label: "Materials",
+        text: 'Constructed from high-strength forged steel, such as ASTM A105, F304, F316, and other grades, to ensure durability and corrosion resistance.',
       },
       {
-        label: "Valve Type",
-        text: "Lubricated",
+        label: "Connection Types",
+        text: 'Available in threaded (NPT), socket weld, butt weld, and flanged ends to meet diverse piping requirements.',
       },
       {
-        label: "Pressure Class",
-        text: "ANSI 150 / 300 / 600 / 900",
+        label: "Pressure Ratings",
+        text: 'Designed for high-pressure applications with class ratings such as 150, 300, 600, 800, 1500, and 2500.',
       },
       {
-        label: "End Connection",
-        text: "RF / RTJ / BW",
-      },
-      {
-        label: "Bore",
-        text: "Full Bore / Reduced Bore",
-      },
-      {
-        label: "Operator",
-        text: "Lever / Gear / Actuator",
-      },
-      {
-        label: "Material",
-        text: "Carbon Steal / Stainless Steel / Duplex / Alloy Steel",
-      },
-      {
-        label: "Operating Temperature",
-        text: "Standard / High",
-      },
-      {
-        label: "Leakage Class",
-        text: "FCI 70-2 Class IV",
-      },
-      {
-        label: "Design Standard",
-        text: "ASME B16.34 /  API 6D / ISO 14313",
-      },
-      {
-        label: "Face to Face Standard",
-        text: "ASME B16.10",
-      },
-      {
-        label: "End Connection Standard",
-        text: "ASME B16.10",
-      },
-      {
-        label: "Test Standard",
-        text: "API 6D / API 598",
-      },
-      {
-        label: "Fire Safe Standard",
-        text: "API 607 / ISO 10497 / API 6FA",
-      },
-
-      {
-        label: "Certification",
-        text: "EN 10204 3.1 - 3.2 / ISO 15848 Fugitive Emission / 2014-68-EU PED/ SIL Capable / IP 67 (Gearbox)",
+        label: "Design Features",
+        text: 'These valves include a bolted bonnet or a welded bonnet, a flexible or solid wedge gate for tight shutoff, and backseat arrangements for added safety.',
       },
     ],
     productInfo: [
@@ -887,7 +759,9 @@ const detailProductData: any = [
         title: "Tr Quick Sheet PDF",
         downloadURL: "",
       },
+      
     ],
+    
     largeImages: [],
     smallImages: [],
   },

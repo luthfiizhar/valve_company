@@ -85,9 +85,13 @@ const DetailProduct = () => {
   let product: Product = data.data;
   let spec: Specification[] = product.specification;
   let productInfo: ProductInfo[] = product.productInfo;
+  let isLongDesc = false;
+  if (spec.length > 5) {
+    isLongDesc = true;
+  }
+
   // let bigImage = details["largeImages"];
   // let smallImage = details["smallImages"];
-
   return (
     <div className="container w-full flex flex-col gap-[20px]">
       <SectionTitle title={product.name} isOneLine={true}></SectionTitle>
@@ -116,13 +120,15 @@ const DetailProduct = () => {
       </div>
       <div className="flex flex-col gap-[12px]">
         <ProductInfoTitle text="Spesification"></ProductInfoTitle>
-        <div className="flex flex-col gap-[12px] lg:flex-wrap lg:max-h-[648px] lg:h-auto lg:gap-x-[40px]">
+        <div
+          className={`flex flex-col gap-[12px] lg:flex-wrap lg:max-h-[648px] lg:h-auto lg:gap-x-[40px]`}>
           {spec.map((item: { label: string; text: string }, index: number) => {
             return (
               <ProductSpecComponent
                 key={index}
                 label={item.label}
-                text={item.text}></ProductSpecComponent>
+                text={item.text}
+                isLongDesc={isLongDesc}></ProductSpecComponent>
             );
           })}
         </div>

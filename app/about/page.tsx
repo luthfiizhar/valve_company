@@ -6,7 +6,7 @@ import Image from "next/image";
 const AboutUsPage = () => {
   return (
     <div className="container w-full flex flex-col gap-[24px] items-center lg:items-start">
-      <SectionTitle title="About Us" isOneLine={true}></SectionTitle>
+      {/* <SectionTitle title="About Us" isOneLine={true}></SectionTitle> */}
       <div className="w-full h-[300px] bg-slate-400 rounded-[30px] lg:h-[712px]">
         <div className="relative w-full h-full object-contain">
           <Image
@@ -14,6 +14,10 @@ const AboutUsPage = () => {
             alt=""
             fill
             className="object-cover rounded-[30px]"></Image>
+          <div className="absolute h-full w-full bg-black opacity-50 rounded-[30px] "></div>
+          <h1 className="absolute h-full w-full text-center content-center text-white font-semibold text-[32px] lg:text-[48px]">
+            About Us
+          </h1>
         </div>
       </div>
       <span className="whitespace-pre-line text-primary text-[16px] font-medium lg:text-[24px]">

@@ -3,11 +3,19 @@ import React from "react";
 interface ProductSpecComponentProps {
   label: string;
   text: string;
+  isLongDesc: boolean;
 }
 
-const ProductSpecComponent = ({ label, text }: ProductSpecComponentProps) => {
+const ProductSpecComponent = ({
+  label,
+  text,
+  isLongDesc,
+}: ProductSpecComponentProps) => {
   return (
-    <div className="flex flex-row w-full gap-[10px] lg:w-[620px]">
+    <div
+      className={`flex flex-row w-full gap-[10px] ${
+        isLongDesc && "lg:w-[620px]"
+      }`}>
       <div className="flex flex-row w-[156px] gap-[2px] text-[14px] text-[#000000] font-bold lg:w-[280px] lg:text-[24px]">
         <span className="flex w-full">{label}</span>
         <span className="flex-none">:</span>

@@ -21,7 +21,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
   try {
     await transporter.sendMail({
       from: '"Message bot"<luthfiizhar@gmail.com>', // sender address
-      to: `izharluthfi@gmail.com`, // list of receivers
+      to: `anightboy1234@gmail.com`, // list of receivers
       subject: `Message from ${formEntries["name"]}`, // Subject line
       html: `<h1>${formEntries["message"]}</h1>`, // html body
     });

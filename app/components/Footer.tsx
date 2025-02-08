@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
 import appstoreImage from "@/public/images/icons/app_store.png";
 import playstoreImage from "@/public/images/icons/play_store.png";
+import { AnimatePresence, motion } from "framer-motion";
 
 const iconsMobile = [
   {
@@ -55,7 +57,7 @@ const Footer = () => {
           <div className="text-[16px] text-center">
             Your high quality valve for a secure connection
           </div>
-          <div className="flex items-center gap-[24px] ">
+          {/* <div className="flex items-center gap-[24px] ">
             {iconsMobile.map((icon, index) => {
               return (
                 <div key={index} className="p-[7px] rounded-[4px] bg-[#313131]">
@@ -63,7 +65,7 @@ const Footer = () => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
         <div className="flex w-full justify-center items-center gap-[10px]">
           <div className=" w-[165px] h-[45px] bg-slate-300">
@@ -106,7 +108,7 @@ const Footer = () => {
               <div className="lg:text-[22px] text-center">
                 Your high quality valve for a secure connection
               </div>
-              <div className="flex items-center gap-[24px] ">
+              {/* <div className="flex items-center gap-[24px] ">
                 {iconsDesktop.map((icon, index) => {
                   return (
                     <div
@@ -116,7 +118,7 @@ const Footer = () => {
                     </div>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
             <div className="w-full lg:flex lg:flex-row lg:gap-[48px] pt-[82px] justify-center">
               <div className="flex flex-col gap-[20px] w-[246px]">
@@ -151,26 +153,39 @@ const Footer = () => {
                 <span className="text-[24px] text-[#FFFFFF] font-semibold">
                   Get Our App
                 </span>
-                <div className="flex flex-col gap-[16px]">
-                  <div className=" w-[180px] h-[60px]">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={playstoreImage}
-                        alt=""
-                        fill
-                        className="object-cover"></Image>
+                <AnimatePresence>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 1,
+                      transition: {
+                        delay: 0.5,
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      },
+                    }}>
+                    <div className="flex flex-col gap-[16px]">
+                      <div className=" w-[180px] h-[60px]">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={playstoreImage}
+                            alt=""
+                            fill
+                            className="object-cover"></Image>
+                        </div>
+                      </div>
+                      <div className=" w-[180px] h-[60px]">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={appstoreImage}
+                            alt=""
+                            fill
+                            className="object-cover"></Image>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className=" w-[180px] h-[60px]">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={appstoreImage}
-                        alt=""
-                        fill
-                        className="object-cover"></Image>
-                    </div>
-                  </div>
-                </div>
+                  </motion.div>{" "}
+                </AnimatePresence>
               </div>
             </div>
           </div>

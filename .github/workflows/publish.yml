@@ -24,18 +24,27 @@ jobs:
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup
 
+      - name: "Create env file"
+        run: |
+          touch .env
+          echo BASE_URL=http://localhost:300 >> .env
+          echo EMAIL_FROM=luthfiizhar@gmail.com >> .env
+          echo EMAIL_APP_PASSWORD=pfgisjcehklxrphs >> .env
+          echo DATABASE_URL="file:./dev.db" >> .env
+          cat .env
+
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npx next build
+        run: npx next start
 
-      - name: Upload artifact 📡
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
+      # - name: Upload artifact 📡
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: ./out
 
   deploy:
     environment:

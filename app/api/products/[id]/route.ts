@@ -11,6 +11,7 @@ import { prisma } from "@/prisma/client";
 // }
 
 interface Product {
+  id: string;
   name: string;
   description: string;
   spec: string;
@@ -27,7 +28,7 @@ interface Product {
 }
 
 export async function GET(
-  request: NextRequest,
+  request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
@@ -39,13 +40,13 @@ export async function GET(
         id: id,
       },
     });
-    return NextResponse.json({
+    return Response.json({
       status: 200,
       message: "success",
       data: result,
     });
   } catch (error) {
-    return NextResponse.json({
+    return Response.json({
       status: 500,
       message: "failed",
       error: error,

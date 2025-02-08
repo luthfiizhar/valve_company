@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  basePath: "/sotck-of-valve",
-  output: "export", // <=== enables static exports
-  reactStrictMode: true,
+  // output: "export",
+  // basePath: "/stock-of-valve",
+  // reactStrictMode: true,
+  // distDir: "dist",
 };
 
 module.exports = {
@@ -18,4 +18,6 @@ module.exports = {
   },
 };
 
-export default nextConfig;
+// export default nextConfig;
+
+module.exports = nextConfig;

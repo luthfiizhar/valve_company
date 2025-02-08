@@ -1,5 +1,4 @@
 import React from "react";
-import SectionTitle from "../components/SectionTitle";
 import aboutImage from "@/public/images/about_pict.jpg";
 import Image from "next/image";
 

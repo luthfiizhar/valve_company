@@ -10,6 +10,22 @@ import { prisma } from "@/prisma/client";
 //   res.status(200).json({ id });
 // }
 
+interface Product {
+  name: string;
+  description: string;
+  spec: string;
+  productInfo: string;
+  bigImagesURL: string;
+  smallImagesURL: string;
+  highlightImageURL: string;
+  catalogueCoverImageURL: string;
+  catalogueFileURL: string;
+  quicksheetCoverImageURL: string;
+  quicksheetFileURL: string;
+  userManualCoverImageURL: string;
+  userManualFileURL: string;
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -57,7 +73,7 @@ export async function PUT(
     quicksheetFileURL,
     userManualCoverImageURL,
     userManualFileURL,
-  }: any = data;
+  }: Product = data;
   try {
     const id = (await params).id;
     const result = await prisma.product.update({

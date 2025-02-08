@@ -114,7 +114,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                downloadURL={item.userManualFileURL}
+                // downloadURL={item.userManualFileURL}
                 coverURL={item.userManualCoverImageURL}></ResourcesComponent>
             );
           })}
@@ -128,7 +128,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                downloadURL={item.catalogueFileURL}
+                // downloadURL={item.catalogueFileURL}
                 coverURL={item.catalogueCoverImageURL}></ResourcesComponent>
             );
           })}
@@ -142,7 +142,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                downloadURL={item.quicksheetFileURL}
+                // downloadURL={item.quicksheetFileURL}
                 coverURL={item.quicksheetCoverImageURL}></ResourcesComponent>
             );
           })}
@@ -156,7 +156,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                downloadURL={item.fileURL}
+                // downloadURL={item.fileURL}
                 coverURL={item.coverImageURL}></ResourcesComponent>
             );
           })}

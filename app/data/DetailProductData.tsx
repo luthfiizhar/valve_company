@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 const detailProductData: any = [
   {
     id: "1",
@@ -634,7 +635,7 @@ const detailProductData: any = [
     spec: [
       {
         label: "Temperature Range",
-        text: 'These valves can operate effectively in a temperature range of -196°C (-321°F) to 648°C (1200°F), depending on the valve type and material specifications.',
+        text: "These valves can operate effectively in a temperature range of -196°C (-321°F) to 648°C (1200°F), depending on the valve type and material specifications.",
       },
       {
         label: "Pressure Class",
@@ -648,7 +649,6 @@ const detailProductData: any = [
         label: "Application",
         text: "These valves are widely used for flow regulation, isolation, and monitoring in instrumentation lines, gas distribution systems, and process control setups.",
       },
-      
     ],
     productInfo: [
       {
@@ -678,7 +678,7 @@ const detailProductData: any = [
     spec: [
       {
         label: "Pressure Class",
-        text: 'Tube fittings are capable of handling pressure ratings up to 6,000 PSI, with some designs suitable for ultra-high-pressure applications reaching 10,000 PSI.',
+        text: "Tube fittings are capable of handling pressure ratings up to 6,000 PSI, with some designs suitable for ultra-high-pressure applications reaching 10,000 PSI.",
       },
       {
         label: "Temperature Range",
@@ -696,7 +696,6 @@ const detailProductData: any = [
         label: "Application",
         text: "Ideal for use in instrumentation lines, gas distribution systems, hydraulic systems, chemical processing, and oil and gas industries.",
       },
-      
     ],
     productInfo: [
       {
@@ -715,7 +714,6 @@ const detailProductData: any = [
         title: "Tr Quick Sheet PDF",
         downloadURL: "",
       },
-      
     ],
     largeImages: [],
     smallImages: [],
@@ -727,19 +725,19 @@ const detailProductData: any = [
     spec: [
       {
         label: "Materials",
-        text: 'Constructed from high-strength forged steel, such as ASTM A105, F304, F316, and other grades, to ensure durability and corrosion resistance.',
+        text: "Constructed from high-strength forged steel, such as ASTM A105, F304, F316, and other grades, to ensure durability and corrosion resistance.",
       },
       {
         label: "Connection Types",
-        text: 'Available in threaded (NPT), socket weld, butt weld, and flanged ends to meet diverse piping requirements.',
+        text: "Available in threaded (NPT), socket weld, butt weld, and flanged ends to meet diverse piping requirements.",
       },
       {
         label: "Pressure Ratings",
-        text: 'Designed for high-pressure applications with class ratings such as 150, 300, 600, 800, 1500, and 2500.',
+        text: "Designed for high-pressure applications with class ratings such as 150, 300, 600, 800, 1500, and 2500.",
       },
       {
         label: "Design Features",
-        text: 'These valves include a bolted bonnet or a welded bonnet, a flexible or solid wedge gate for tight shutoff, and backseat arrangements for added safety.',
+        text: "These valves include a bolted bonnet or a welded bonnet, a flexible or solid wedge gate for tight shutoff, and backseat arrangements for added safety.",
       },
     ],
     productInfo: [
@@ -759,9 +757,8 @@ const detailProductData: any = [
         title: "Tr Quick Sheet PDF",
         downloadURL: "",
       },
-      
     ],
-    
+
     largeImages: [],
     smallImages: [],
   },

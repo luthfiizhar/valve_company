@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import detailProductData from "@/app/data/DetailProductData";
 import SectionTitle from "@/app/components/SectionTitle";
 import ProductInfoTitle from "./ProductInfoTitle";
 import ProductSpecComponent from "./ProductSpecComponent";
@@ -46,9 +45,8 @@ interface ProductInfo {
 
 const DetailProduct = () => {
   const path = usePathname();
-  let pathArray = path.split("/");
-  let id = pathArray[pathArray.length - 1];
-  console.log(`id ${id}`);
+  const pathArray = path.split("/");
+  const id = pathArray[pathArray.length - 1];
 
   const [data, setData] = useState<Data>();
   const [isLoading, setLoading] = useState(true);
@@ -76,15 +74,15 @@ const DetailProduct = () => {
 
         // isInView = useInView(ref, { once: true });
       });
-  }, []);
+  }, [id]);
 
   if (isLoading) return <p>Loading ...</p>;
   if (!data) return <p>No profile data</p>;
   //   console.log(spec);
   console.log(data["data"]);
-  let product: Product = data.data;
-  let spec: Specification[] = product.specification;
-  let productInfo: ProductInfo[] = product.productInfo;
+  const product: Product = data.data;
+  const spec: Specification[] = product.specification;
+  const productInfo: ProductInfo[] = product.productInfo;
   let isLongDesc = false;
   if (spec.length > 5) {
     isLongDesc = true;

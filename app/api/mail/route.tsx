@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
-export async function POST(request: NextRequest, response: NextResponse) {
+export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const formEntries = Object.fromEntries(formData.entries());
 

@@ -1,8 +1,13 @@
 import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/prisma/client";
-import { Prisma } from "@prisma/client";
 
-export async function GET(request: NextRequest) {
+interface Certificate {
+  name: string;
+  coverImageURL: string;
+  fileURL: string;
+}
+
+export async function GET() {
   try {
     const result = await prisma.certificate.findMany({});
     return NextResponse.json({
@@ -22,7 +27,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
-  const { name, coverImageURL, fileURL }: any = data;
+  const { name, coverImageURL, fileURL }: Certificate = data;
 
   try {
     const result = await prisma.certificate.create({

@@ -43,6 +43,7 @@ const infoList = [
 const ContactPage = () => {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   async function handleSubmit(event: any) {
     event.preventDefault();
 
@@ -94,7 +95,7 @@ const ContactPage = () => {
                 <ContactInfoComponent
                   key={index}
                   text={info.text}
-                  children={info.icon}></ContactInfoComponent>
+                  icon={info.icon}></ContactInfoComponent>
               );
             })}
           </div>

@@ -1,9 +1,13 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { ReactNode } from "react";
 
-const Transition = ({ children }: any) => {
+interface TransitionProps {
+  children: ReactNode;
+}
+
+const Transition = ({ children }: TransitionProps) => {
   const pathName = usePathname();
   return (
     <AnimatePresence>

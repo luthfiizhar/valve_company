@@ -4,13 +4,13 @@ import { useState } from "react";
 
 interface ResourcesComponentProps {
   text: string;
-  downloadURL: string;
+  // downloadURL: string;
   coverURL: string;
 }
 
 const ResourcesComponent = ({
   text,
-  downloadURL,
+  // downloadURL,
   coverURL,
 }: ResourcesComponentProps) => {
   const [isHovering, setIsHovered] = useState(false);

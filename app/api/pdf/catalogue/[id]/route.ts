@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
 
 import { promises as fs } from "fs";
@@ -6,7 +6,6 @@ import path from "path";
 
 export async function GET(
   request: NextRequest,
-  // response: NextResponse,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const id = (await params).id;
@@ -16,16 +15,12 @@ export async function GET(
         id: id,
       },
     });
-    // const filePath = path.resolve(".", product?.catalogueFileURL!);
-    // const imageBuffer = fs.readFileSync(filePath);
-    // res.setHeader("Content-Type", "image/jpg");
-    // res.send(imageBuffer);
-    // response.
-    // var base64 = base64EncodePdf(product?.catalogueFileURL!);
-    let base64;
-    let fileDir;
-    fileDir = path.join(process.cwd(), `public\\${product?.catalogueFileURL!}`);
-    base64 =
+
+    const fileDir = path.join(
+      process.cwd(),
+      `public\\${product!.catalogueFileURL ?? ""}`
+    );
+    const base64 =
       "data:file/pdf;base64," +
       (await fs.readFile(fileDir, { encoding: "base64" }));
     return NextResponse.json({
@@ -45,24 +40,24 @@ export async function GET(
   }
 }
 
-// Helper function
-async function base64EncodePdf(file: string) {
-  // console.log(file);
-  // console.log(__dirname + "\\files\\Plug_Valve_Catalogue.pdf");
-  let result;
-  let fileDir;
-  let filenames;
-  try {
-    fileDir = path.join(process.cwd(), `public\\${file}`);
-    // console.log("File DIR");
-    // console.log(fileDir);
+// // Helper function
+// async function base64EncodePdf(file: string) {
+//   // console.log(file);
+//   // console.log(__dirname + "\\files\\Plug_Valve_Catalogue.pdf");
+//   let result;
+//   let fileDir;
+//   let filenames;
+//   try {
+//     fileDir = path.join(process.cwd(), `public\\${file}`);
+//     // console.log("File DIR");
+//     // console.log(fileDir);
 
-    filenames = await fs.readFile(fileDir, { encoding: "base64" });
-    // console.log(filenames);
-    result = "data:file/pdf;base64," + filenames;
-  } catch (error) {
-    throw error;
-  }
+//     filenames = await fs.readFile(fileDir, { encoding: "base64" });
+//     // console.log(filenames);
+//     result = "data:file/pdf;base64," + filenames;
+//   } catch (error) {
+//     throw error;
+//   }
 
-  return result;
-}
+//   return result;
+// }

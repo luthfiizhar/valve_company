@@ -1,34 +1,34 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
+// import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
 import appstoreImage from "@/public/images/icons/app_store.png";
 import playstoreImage from "@/public/images/icons/play_store.png";
 import { AnimatePresence, motion } from "framer-motion";
 
-const iconsMobile = [
-  {
-    icon: <CiInstagram size={24}></CiInstagram>,
-  },
-  {
-    icon: <CiLinkedin size={24}></CiLinkedin>,
-  },
-  {
-    icon: <CiTwitter size={24}></CiTwitter>,
-  },
-];
+// const iconsMobile = [
+//   {
+//     icon: <CiInstagram size={24}></CiInstagram>,
+//   },
+//   {
+//     icon: <CiLinkedin size={24}></CiLinkedin>,
+//   },
+//   {
+//     icon: <CiTwitter size={24}></CiTwitter>,
+//   },
+// ];
 
-const iconsDesktop = [
-  {
-    icon: <CiInstagram size={36}></CiInstagram>,
-  },
-  {
-    icon: <CiLinkedin size={36}></CiLinkedin>,
-  },
-  {
-    icon: <CiTwitter size={36}></CiTwitter>,
-  },
-];
+// const iconsDesktop = [
+//   {
+//     icon: <CiInstagram size={36}></CiInstagram>,
+//   },
+//   {
+//     icon: <CiLinkedin size={36}></CiLinkedin>,
+//   },
+//   {
+//     icon: <CiTwitter size={36}></CiTwitter>,
+//   },
+// ];
 
 const aboutUsButtons = [
   { text: "Profile" },

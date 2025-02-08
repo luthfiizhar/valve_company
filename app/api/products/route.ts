@@ -2,7 +2,23 @@ import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/prisma/client";
 import { Prisma } from "@prisma/client";
 
-export async function GET(request: NextRequest) {
+interface Product {
+  name: string;
+  description: string;
+  spec: object;
+  prod: object;
+  bigImagesURL: string;
+  smallImagesURL: string;
+  highlightImageURL: string;
+  catalogueCoverImageURL: string;
+  catalogueFileURL: string;
+  quicksheetCoverImageURL: string;
+  quicksheetFileURL: string;
+  userManualCoverImageURL: string;
+  userManualFileURL: string;
+}
+
+export async function GET() {
   try {
     const result = await prisma.product.findMany({});
     return NextResponse.json({
@@ -30,11 +46,11 @@ export async function POST(request: NextRequest) {
     bigImagesURL,
     smallImagesURL,
     highlightImageURL,
-  }: any = data;
+  }: Product = data;
 
   try {
-    var specification = spec as Prisma.JsonArray;
-    var productInfo = prod as Prisma.JsonArray;
+    const specification = spec as Prisma.JsonArray;
+    const productInfo = prod as Prisma.JsonArray;
 
     const result = await prisma.product.create({
       data: {

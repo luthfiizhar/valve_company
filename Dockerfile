@@ -7,13 +7,13 @@ WORKDIR /usr/src/valve_company
 # Copy the package.json file
 COPY package.json package.json
 # install project dependencies
-RUN npm install --force
+RUN npm install
 # copy project files 
 # make sure to set up .dockerignore to copy only necessary files
 COPY . .
 # run the build command which will build and export html files
 # RUN npx prisma db seed && npm run build
-RUN npx prisma db push && npm run build
+RUN npx prisma generate && npx prisma db push && npm run build
 
 # bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production

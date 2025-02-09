@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: "export",
+  output: "standalone",
   // basePath: "/stock-of-valve",
   // reactStrictMode: true,
   // distDir: "dist",

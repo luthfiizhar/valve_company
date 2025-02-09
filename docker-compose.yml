@@ -1,19 +1,9 @@
 version: "3.9"
 
 services:
-  # this service should use the web image after you build it
-  web:
-    image: valve_company:dev
+  nextapp:
+    container_name: nextapp
+    image: nextapp
+    build: .
     ports:
-      - "3000:80"
-    environment:
-      NODE_ENV: development
-  # this service is the database service using mongo from docker hub
-  # mongo:
-  #   image: mongo-replica:latest
-  #   restart: always
-  #   ports:
-  #     - "27027:27017"
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: root
-  #     MONGO_INITDB_ROOT_PASSWORD: password
+      - "3000:3000"

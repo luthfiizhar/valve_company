@@ -22,7 +22,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN apt-get -qy update && apt-get -qy install openssl
+RUN  apk update && sudo apk add openssl
 RUN npx prisma generate
 
 # Next.js collects completely anonymous telemetry data about general usage.

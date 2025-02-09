@@ -13,7 +13,7 @@ RUN npm install --force
 COPY . .
 # run the build command which will build and export html files
 # RUN npx prisma db seed && npm run build
-RUN sudo npx prisma db push && npm run build
+RUN npx prisma db push && npm run build
 
 # bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production

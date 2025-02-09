@@ -25,6 +25,7 @@ COPY . .
 RUN apk update 
 RUN apk upgrade
 RUN apk add openssl
+RUN npm install
 RUN npx prisma generate
 
 # Next.js collects completely anonymous telemetry data about general usage.

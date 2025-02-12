@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <section className="">
-      <div className="container w-full max-auto flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px]">
+      <div className="container w-full max-auto flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px] bg-primary bg-opacity-20 rounded-2xl p-12 lg:p-20 mt-8">
         <div className="order-2 lg:order-1 w-full flex flex-col items-center lg:items-start gap-[24px]">
           <p className="flex flex-col text-primary text-[16px] lg:text-[20px]">
             <span>Dear Customer,</span>

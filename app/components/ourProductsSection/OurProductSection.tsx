@@ -23,6 +23,7 @@ interface Product {
   name: string;
   description: string;
   highlightImageURL: string;
+  order: number;
 }
 
 function Box({ children }: PropsWithChildren<unknown>) {

@@ -2,18 +2,22 @@ import React from "react";
 import NavButton from "./NavButton";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
+import logoBlack from "@/public/images/logo_black.svg";
 
 export default function NavigationBar() {
   return (
     <header className="py-[16px] text-black">
-      <div className="h-full mx-auto flex justify-between items-center px-[16px]">
-        <div className="h-[36px] w-[42px] lg:h-[64px] lg:w-[64px]">
-          <Image
-            src={"/images/logo_black.svg"}
-            className="object-contain h-[36px] w-[42px]  lg:w-[64px] lg:h-[64px]"
-            alt=""
-            width={36}
-            height={42}></Image>
+      <div className="h-max mx-auto flex justify-between items-center px-[16px]">
+        <div className=" h-[48px] w-[56px] lg:h-[64px] lg:w-[82px] lg:flex-none">
+          <div className="relative h-full w-full object-cover items-center">
+            <Image
+              src={logoBlack}
+              className="object-containt"
+              alt=""
+              fill
+              sizes="100vw"
+              quality={100}></Image>
+          </div>
         </div>
         <div className="hidden lg:flex lg:flex-col items-center gap-[12px]">
           <NavButton></NavButton>

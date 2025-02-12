@@ -16,13 +16,20 @@ interface Product {
   quicksheetFileURL: string;
   userManualCoverImageURL: string;
   userManualFileURL: string;
+  order: number;
 }
 
 export const revalidate = 30;
 
 export async function GET() {
   try {
-    const result = await prisma.product.findMany({});
+    const result = await prisma.product.findMany({
+      orderBy: [
+        {
+          order: "asc",
+        },
+      ],
+    });
     return NextResponse.json({
       status: 200,
       message: "success",

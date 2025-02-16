@@ -13,9 +13,9 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const links = [
   { name: "home", path: "/" },
-  { name: "services", path: "/services" },
-  { name: "resume", path: "/resume" },
-  { name: "projects", path: "/projects" },
+  { name: "products", path: "/products" },
+  { name: "about us", path: "/about" },
+  { name: "resources", path: "/resources" },
   { name: "contact", path: "/contact" },
 ];
 const MobileNav = () => {

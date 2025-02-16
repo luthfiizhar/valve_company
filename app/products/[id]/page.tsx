@@ -65,7 +65,7 @@ const DetailProduct = () => {
   // let smallImage = details["smallImages"];
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/products/${id}`)
+    fetch(`/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

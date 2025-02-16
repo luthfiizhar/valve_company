@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { BsDownload, BsCode } from "react-icons/bs";
 
 interface ResourcesComponentProps {
   text: string;
@@ -33,8 +35,21 @@ const ResourcesComponent = ({
             fill
             className=" object-cover rounded-[20px] border-solid border-primary border-[0.5px]"></Image>
           {isHovering ? (
-            <div className="block h-full w-full rounded-[20px] bg-black bg-opacity-50 justify-center content-center items-center">
-              <div className="">download button</div>
+            <div className="absolute w-full h-full rounded-[20px] bg-black bg-opacity-50">
+              <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                <div className="flex flex-row gap-[8px]">
+                  <Button
+                    className="rounded-[4px] lg:rounded-[8px]"
+                    size={"sm"}>
+                    <BsDownload></BsDownload>
+                  </Button>
+                  <Button
+                    className="rounded-[4px] lg:rounded-[8px]"
+                    size={"sm"}>
+                    <BsCode></BsCode>
+                  </Button>
+                </div>
+              </div>
             </div>
           ) : (
             <div></div>

@@ -33,8 +33,6 @@ export async function GET(
 ) {
   try {
     const id = (await params).id;
-    // console.log(id);
-
     const result = await prisma.product.findFirst({
       where: {
         id: id,

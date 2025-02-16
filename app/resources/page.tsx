@@ -83,12 +83,12 @@ const ResourcePage = () => {
   const [isLoadingCertificate, setLoadingCertificate] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/products")
+    fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         setLoading(false);
-        fetch("http://localhost:3000/api/certificate")
+        fetch("/api/certificate")
           .then((res) => res.json())
           .then((data) => {
             setCertificateData(data);

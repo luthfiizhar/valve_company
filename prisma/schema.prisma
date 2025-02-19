@@ -30,6 +30,7 @@ model Product {
   quicksheetFileURL String?
   domain String?
   order Int?
+  productCode String? @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

@@ -11,12 +11,14 @@ const ProductInfoDownload = ({
   title,
   downloadURL,
 }: ProductInfoDownloadProps) => {
+  console.log(downloadURL);
+
   return (
     <div className="flex flex-row w-max gap-[16px] justify-center lg:max-w-[300px]">
       <span className="text-[16px] text-[#000000] font-semibold lg:text-[24px]">
         {title}
       </span>
-      <Link href={downloadURL} target="_blank" download>
+      <Link href={downloadURL} target="_blank">
         <RxDownload size={24}></RxDownload>
       </Link>
     </div>

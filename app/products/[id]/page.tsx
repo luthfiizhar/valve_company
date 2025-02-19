@@ -117,7 +117,7 @@ const DetailProduct = () => {
         </div>
       </div>
       <div className="flex flex-col gap-[12px]">
-        <ProductInfoTitle text="Spesification"></ProductInfoTitle>
+        <ProductInfoTitle text="Specification"></ProductInfoTitle>
         <div
           className={`flex flex-col gap-[12px] lg:flex-wrap lg:max-h-[648px] lg:h-auto lg:gap-x-[40px]`}>
           {spec.map((item: { label: string; text: string }, index: number) => {

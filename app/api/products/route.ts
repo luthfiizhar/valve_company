@@ -17,6 +17,7 @@ interface Product {
   userManualCoverImageURL: string;
   userManualFileURL: string;
   order: number;
+  productCode: string;
 }
 
 export const revalidate = 30;

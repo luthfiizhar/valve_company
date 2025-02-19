@@ -5,6 +5,7 @@ import Image from "next/image";
 import appstoreImage from "@/public/images/icons/app_store.png";
 import playstoreImage from "@/public/images/icons/play_store.png";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 // const iconsMobile = [
 //   {
@@ -31,14 +32,16 @@ import { AnimatePresence, motion } from "framer-motion";
 // ];
 
 const aboutUsButtons = [
-  { text: "Profile" },
-  { text: "Products" },
-  { text: "Resource" },
+  { text: "Profile", link: "/about" },
+  { text: "Products", link: "/products" },
+  { text: "Resource", link: "/resources" },
 ];
 const contactsInfo = [
   { text: "stockofvalve@stockofvalf.com" },
-  { text: "+90 224 482 46 97" },
-  { text: "Çalı Mah. Çınarlık Cad. No: 8 16275Bursa/Turkiye" },
+  { text: "+90 541 190 2903" },
+  {
+    text: "Kızılırmak Mah. 1450 Sok. No: 18, Köprülü Plaza, Kat No:6 Daire No: 23, Çankaya, Ankara, TÜRKİYE",
+  },
 ];
 
 const Footer = () => {
@@ -89,7 +92,7 @@ const Footer = () => {
         </div>
         <div className="items-center text-center">
           <span className="text-[16px]">
-            Copyright © 2024. All rights reserved.
+            Copyright © 2025. All rights reserved.
           </span>
         </div>
       </div>
@@ -128,16 +131,16 @@ const Footer = () => {
                 <div className="flex flex-col gap-[16px]">
                   {aboutUsButtons.map((item, index) => {
                     return (
-                      <span key={index} className="text-[22px]">
-                        {item.text}
-                      </span>
+                      <Link key={index} href={item.link}>
+                        <span className="text-[22px]">{item.text}</span>
+                      </Link>
                     );
                   })}
                 </div>
               </div>
               <div className="flex flex-col gap-[20px]  w-[383px]">
                 <span className="text-[24px] text-[#FFFFFF] font-semibold">
-                  Conntacts
+                  Contacts
                 </span>
                 <div className="flex flex-col gap-[16px]">
                   {contactsInfo.map((item, index) => {

@@ -24,6 +24,7 @@ interface Product {
   description: string;
   highlightImageURL: string;
   order: number;
+  productCode: string;
 }
 
 function Box({ children }: PropsWithChildren<unknown>) {
@@ -86,7 +87,7 @@ const OurProductSection = () => {
                 transition={{ duration: 0.3, delay: 0.4 }}>
                 <ProductComponent
                   index={index + 1}
-                  id={item.id}
+                  id={item.productCode}
                   title={item.name}
                   desc={item.description}
                   imageUrl={item.highlightImageURL}></ProductComponent>

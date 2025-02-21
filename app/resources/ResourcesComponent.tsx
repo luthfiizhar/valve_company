@@ -3,16 +3,17 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { BsDownload, BsCode } from "react-icons/bs";
+import Link from "next/link";
 
 interface ResourcesComponentProps {
   text: string;
-  // downloadURL: string;
+  downloadURL: string;
   coverURL: string;
 }
 
 const ResourcesComponent = ({
   text,
-  // downloadURL,
+  downloadURL,
   coverURL,
 }: ResourcesComponentProps) => {
   const [isHovering, setIsHovered] = useState(false);
@@ -38,16 +39,20 @@ const ResourcesComponent = ({
             <div className="absolute w-full h-full rounded-[20px] bg-black bg-opacity-50">
               <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 <div className="flex flex-row gap-[8px]">
-                  <Button
-                    className="rounded-[4px] lg:rounded-[8px]"
-                    size={"sm"}>
-                    <BsDownload></BsDownload>
-                  </Button>
-                  <Button
-                    className="rounded-[4px] lg:rounded-[8px]"
-                    size={"sm"}>
-                    <BsCode></BsCode>
-                  </Button>
+                  <Link href={downloadURL} target="_blank" download>
+                    <Button
+                      className="rounded-[4px] lg:rounded-[8px]"
+                      size={"sm"}>
+                      <BsDownload></BsDownload>
+                    </Button>
+                  </Link>
+                  <Link href={downloadURL} target="_blank">
+                    <Button
+                      className="rounded-[4px] lg:rounded-[8px]"
+                      size={"sm"}>
+                      <BsCode></BsCode>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

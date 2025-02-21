@@ -9,7 +9,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section className="container w-full max-auto">
-      <div className=" flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px] bg-primary bg-opacity-20 rounded-2xl p-12 lg:p-20 mt-8 ">
+      <div className=" flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px] bg-primary bg-opacity-20 rounded-2xl p-12 lg:p-20 mt-8 lg:items-center">
         <div className="order-2 lg:order-1 w-full flex flex-col items-center lg:items-start gap-[24px]">
           <div className="flex flex-col text-primary text-[16px] lg:text-[20px]">
             <p className="whitespace-pre-line">
@@ -25,8 +25,8 @@ const HeroSection = () => {
           </Link>
         </div>
         <AnimatePresence>
-          <div className="order-1 lg:order-2 block max-w-full h-[240px] lg:max-w-[480px] lg:min-w-[480px] lg:h-auto lg:content-center">
-            <div className="relative h-full w-full content-center object-contain">
+          <div className="order-1 lg:order-2 block max-w-full h-[240px] lg:max-w-[480px] lg:min-w-[480px] lg:h-[300px] lg:content-center">
+            <div className="relative h-full w-full content-center object-contain rounded-2xl overflow-hidden">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{
@@ -39,8 +39,9 @@ const HeroSection = () => {
                   // layout="fill"
                   placeholder="blur"
                   quality={100}
+                  // objectFit="cover"
                   fill
-                  className="object-contain transition-opacity"></Image>{" "}
+                  className="object-cover transition-opacity"></Image>{" "}
               </motion.div>{" "}
             </div>
           </div>

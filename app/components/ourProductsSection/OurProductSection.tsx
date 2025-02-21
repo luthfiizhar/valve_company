@@ -56,8 +56,6 @@ const OurProductSection = () => {
             wrapper={Box}
             count={10}></Skeleton>
         </div>
-
-        {/* <p>Loading</p> */}
       </div>
     );
   }

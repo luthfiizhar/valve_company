@@ -1,7 +1,8 @@
 "use client";
+import Skeleton from "react-loading-skeleton";
 import SectionTitle from "../components/SectionTitle";
 import ResourcesComponent from "./ResourcesComponent";
-import { useState, useEffect } from "react";
+import { useState, useEffect, PropsWithChildren } from "react";
 
 // const userManualList = [
 //   { text: "Split Body Ball Valve", downloadURL: "", imageURL: "" },
@@ -76,6 +77,12 @@ interface Certificate {
   fileURL: string;
 }
 
+function Box({ children }: PropsWithChildren<unknown>) {
+  return (
+    <div className="rounded-lg block pb-10 h-40 lg:h-96 w-full">{children}</div>
+  );
+}
+
 const ResourcePage = () => {
   const [data, setData] = useState<Data>();
   const [certificateData, setCertificateData] = useState<DataCertificate>();
@@ -97,8 +104,30 @@ const ResourcePage = () => {
       });
   }, []);
 
-  if (isLoading) return <p>Loading ...</p>;
-  if (isLoadingCertificate) return <p>Loading ...</p>;
+  if (isLoading) {
+    return (
+      <div className="container w-full ">
+        <div className="">
+          <Skeleton
+            className="h-full rounded-lg"
+            wrapper={Box}
+            count={3}></Skeleton>
+        </div>
+      </div>
+    );
+  }
+  if (isLoadingCertificate) {
+    return (
+      <div className="container w-full ">
+        <div className="">
+          <Skeleton
+            className="h-full rounded-lg"
+            wrapper={Box}
+            count={1}></Skeleton>
+        </div>
+      </div>
+    );
+  }
   if (!data) return <p>No profile data</p>;
   if (!certificateData) return <p>No profile data</p>;
 
@@ -114,7 +143,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                // downloadURL={item.userManualFileURL}
+                downloadURL={item.userManualFileURL}
                 coverURL={item.userManualCoverImageURL}></ResourcesComponent>
             );
           })}
@@ -128,7 +157,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                // downloadURL={item.catalogueFileURL}
+                downloadURL={item.catalogueFileURL}
                 coverURL={item.catalogueCoverImageURL}></ResourcesComponent>
             );
           })}
@@ -142,7 +171,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                // downloadURL={item.quicksheetFileURL}
+                downloadURL={item.quicksheetFileURL}
                 coverURL={item.quicksheetCoverImageURL}></ResourcesComponent>
             );
           })}
@@ -156,7 +185,7 @@ const ResourcePage = () => {
               <ResourcesComponent
                 key={index}
                 text={item.name}
-                // downloadURL={item.fileURL}
+                downloadURL={item.fileURL}
                 coverURL={item.coverImageURL}></ResourcesComponent>
             );
           })}

@@ -157,17 +157,17 @@ const Footer = () => {
                   Get Our App
                 </span>
                 <AnimatePresence>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 1,
-                      transition: {
-                        delay: 0.5,
-                        duration: 0.4,
-                        ease: "easeInOut",
-                      },
-                    }}>
-                    <div className="flex flex-col gap-[16px]">
+                  <div className="flex flex-col gap-[16px]">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: {
+                          delay: 0.5,
+                          duration: 0.4,
+                          ease: "easeInOut",
+                        },
+                      }}>
                       <div className=" w-[180px] h-[60px]">
                         <div className="relative w-full h-full">
                           <Image
@@ -177,6 +177,17 @@ const Footer = () => {
                             className="object-cover"></Image>
                         </div>
                       </div>
+                    </motion.div>{" "}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: {
+                          delay: 0.5,
+                          duration: 0.4,
+                          ease: "easeInOut",
+                        },
+                      }}>
                       <div className=" w-[180px] h-[60px]">
                         <div className="relative w-full h-full">
                           <Image
@@ -186,8 +197,8 @@ const Footer = () => {
                             className="object-cover"></Image>
                         </div>
                       </div>
-                    </div>
-                  </motion.div>{" "}
+                    </motion.div>
+                  </div>
                 </AnimatePresence>
               </div>
             </div>

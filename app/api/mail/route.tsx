@@ -94,9 +94,9 @@ export async function POST(request: NextRequest) {
       </html>
       `, // html body
     });
-    return NextResponse.json({ status: 200 });
+    return NextResponse.json({ status: 200, message: "success" });
   } catch (err) {
     console.log(err);
-    return NextResponse.json({ status: 500 });
+    return NextResponse.json({ status: 500, message: err });
   }
 }

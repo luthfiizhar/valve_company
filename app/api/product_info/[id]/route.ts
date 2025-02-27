@@ -20,7 +20,7 @@ export async function GET({ params }: { params: Promise<{ id: string }> }) {
         productCode: id,
       },
     });
-    let jsonResult: Result = {
+    const jsonResult: Result = {
       id: result?.id ?? "",
       name: result?.name ?? "",
       productInfo: [],

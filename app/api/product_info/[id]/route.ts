@@ -1,4 +1,3 @@
-// import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/prisma/client";
 
 interface Result {
@@ -12,7 +11,10 @@ interface ProductInfo {
   file: string;
 }
 
-export async function GET({ params }: { params: Promise<{ id: string }> }) {
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
   try {
     const id = (await params).id;
     const result = await prisma.product.findFirst({

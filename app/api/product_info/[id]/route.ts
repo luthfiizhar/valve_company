@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from "next/server";
+// import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/prisma/client";
 
 interface Result {
@@ -12,10 +12,7 @@ interface ProductInfo {
   file: string;
 }
 
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET({ params }: { params: Promise<{ id: string }> }) {
   try {
     const id = (await params).id;
     const result = await prisma.product.findFirst({
@@ -28,7 +25,7 @@ export async function GET(
       name: result?.name ?? "",
       productInfo: [],
     };
-    let productInfo: ProductInfo[] = [];
+    const productInfo: ProductInfo[] = [];
     const catalogueFile = result?.catalogueFileURL;
     const userManualFile = result?.userManualFileURL;
     const quicksheetFile = result?.quicksheetFileURL;

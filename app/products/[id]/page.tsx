@@ -1,4 +1,5 @@
 "use client";
+import { PropsWithChildren } from "react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import SectionTitle from "@/app/components/SectionTitle";
@@ -6,6 +7,7 @@ import ProductInfoTitle from "./ProductInfoTitle";
 import ProductSpecComponent from "./ProductSpecComponent";
 import ProductInfoDownload from "./ProductInfoDownload";
 import Image from "next/image";
+import Skeleton from "react-loading-skeleton";
 
 // export async function generateStaticParams() {
 //   const posts = await fetch("http://localhost:3000/products").then((res) =>
@@ -17,30 +19,48 @@ import Image from "next/image";
 //   }));
 // }
 
-interface Data {
+interface DataProductProps {
   message: string;
-  data: Product;
+  data: ProductProps;
 }
 
-interface Product {
+interface DataProductInfoProps {
+  message: string;
+  data: ProductInfoResultProps;
+}
+
+interface ProductProps {
   id: string;
   name: string;
   description: string;
   highlightImageURL: string;
   bigImagesURL: string;
   smallImagesURL: string;
-  specification: [Specification];
-  productInfo: [ProductInfo];
+  specification: [SpecificationProps];
 }
 
-interface Specification {
+interface SpecificationProps {
   label: string;
   text: string;
 }
 
-interface ProductInfo {
+interface ProductInfoResultProps {
+  id: string;
+  name: string;
+  productInfo: [ProductInfoProps];
+}
+
+interface ProductInfoProps {
   title: string;
-  downloadURL: string;
+  file: string;
+}
+
+function Box({ children }: PropsWithChildren<unknown>) {
+  return (
+    <div className="rounded-lg block pb-10 h-full lg:h-full w-full">
+      {children}
+    </div>
+  );
 }
 
 const DetailProduct = () => {
@@ -48,41 +68,44 @@ const DetailProduct = () => {
   const pathArray = path.split("/");
   const id = pathArray[pathArray.length - 1];
 
-  const [data, setData] = useState<Data>();
+  const [data, setData] = useState<DataProductProps>();
+  const [dataProductInfo, setDataProductInfo] =
+    useState<DataProductInfoProps>();
   const [isLoading, setLoading] = useState(true);
-  // const { id } = await params;
-
-  // var details: any = {};
-  // detailProductData.map((item: any, index: number) => {
-  //   if (item.id === id) {
-  //     details = item;
-  //   }
-  // });
-  // let spec: { label: string; text: string }[] = details["spec"];
-  // let productInfo: { title: string; downloadURL: string }[] =
-  //   details["productInfo"];
-  // let bigImage = details["largeImages"];
-  // let smallImage = details["smallImages"];
 
   useEffect(() => {
     fetch(`/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        setLoading(false);
-        // console.log(data);
-
-        // isInView = useInView(ref, { once: true });
+        fetch(`/api/product_info/${id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setDataProductInfo(data);
+            setLoading(false);
+          });
       });
   }, [id]);
 
-  if (isLoading) return <p>Loading ...</p>;
+  if (isLoading) {
+    return (
+      <div className="container w-full h-full ">
+        <Skeleton
+          className="h-auto rounded-lg"
+          height={"100vh"}
+          wrapper={Box}
+          count={1}></Skeleton>
+      </div>
+    );
+  }
   if (!data) return <p>No profile data</p>;
-  //   console.log(spec);
-  console.log(data["data"]);
-  const product: Product = data.data;
-  const spec: Specification[] = product.specification;
-  const productInfo: ProductInfo[] = product.productInfo;
+  if (!dataProductInfo) return <p>No profile data</p>;
+  const product: ProductProps = data.data;
+  const spec: SpecificationProps[] = product.specification;
+
+  const productInfoRes: ProductInfoResultProps = dataProductInfo?.data;
+  const productInfo: ProductInfoProps[] = productInfoRes?.productInfo;
+
   let isLongDesc = false;
   if (spec.length > 5) {
     isLongDesc = true;
@@ -134,16 +157,14 @@ const DetailProduct = () => {
       <div className="flex flex-col gap-[16px] lg:pt-[16px]">
         <ProductInfoTitle text="Product Information"></ProductInfoTitle>
         <div className="flex flex-col gap-[16px] lg:flex-wrap lg:max-h-[100px] lg:h-auto lg:gap-x-[48px] lg:w-min">
-          {productInfo.map(
-            (item: { title: string; downloadURL: string }, index) => {
-              return (
-                <ProductInfoDownload
-                  key={index}
-                  title={item.title}
-                  downloadURL={item.downloadURL}></ProductInfoDownload>
-              );
-            }
-          )}
+          {productInfo.map((item: { title: string; file: string }, index) => {
+            return (
+              <ProductInfoDownload
+                key={index}
+                title={item.title}
+                downloadURL={item.file}></ProductInfoDownload>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -24,16 +24,18 @@ const ResourcesComponent = ({
   return (
     <div className="flex flex-col gap-[16px] w-[148px] items-center lg:w-[180px]">
       <div
-        className="w-[100px] h-[100px] bg-gray-500 rounded-[20px] lg:w-[200px] lg:h-[200px] "
+        className="w-[100px] h-[100px]  rounded-[20px] lg:w-[200px] lg:h-[200px] "
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}>
         <div className="relative h-full w-full bg-opacity-0 rounded-[20px]">
           <Image
             src={coverURL}
-            alt="images not found"
+            alt=""
             quality={100}
             sizes="100vw"
             fill
+            placeholder="blur"
+            blurDataURL="/images/alt_img.jpg"
             className=" object-cover rounded-[20px] border-solid border-primary border-[0.5px]"></Image>
           {isHovering ? (
             <div className="absolute w-full h-full rounded-[20px] bg-black bg-opacity-50">

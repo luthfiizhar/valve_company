@@ -3,57 +3,14 @@ import Skeleton from "react-loading-skeleton";
 import SectionTitle from "../components/SectionTitle";
 import ResourcesComponent from "./ResourcesComponent";
 import { useState, useEffect, PropsWithChildren } from "react";
+import CertificateComponent from "./CertificateComponent";
 
-// const userManualList = [
-//   { text: "Split Body Ball Valve", downloadURL: "", imageURL: "" },
-//   { text: "Fully Welded Ball Valve", downloadURL: "", imageURL: "" },
-//   { text: "Top Entry Bal Valve", downloadURL: "", imageURL: "" },
-//   { text: "Gate Valve", downloadURL: "", imageURL: "" },
-//   { text: "Swing Check Valve", downloadURL: "", imageURL: "" },
-//   { text: "Globe Valve", downloadURL: "", imageURL: "" },
-//   { text: "Plug Valve", downloadURL: "", imageURL: "" },
-//   { text: "Instrumental Valve", downloadURL: "", imageURL: "" },
-//   { text: "Tube Fittings", downloadURL: "", imageURL: "" },
-//   { text: "API 602 Forged Valve", downloadURL: "", imageURL: "" },
-// ];
-// const catalogueList = [
-//   { text: "Split Body Ball Valve", downloadURL: "", imageURL: "" },
-//   { text: "Fully Welded Ball Valve", downloadURL: "", imageURL: "" },
-//   { text: "Top Entry Bal Valve", downloadURL: "", imageURL: "" },
-//   { text: "Gate Valve", downloadURL: "", imageURL: "" },
-//   { text: "Swing Check Valve", downloadURL: "", imageURL: "" },
-//   { text: "Globe Valve", downloadURL: "", imageURL: "" },
-//   { text: "Plug Valve", downloadURL: "", imageURL: "" },
-//   { text: "Instrumental Valve", downloadURL: "", imageURL: "" },
-//   { text: "Tube Fittings", downloadURL: "", imageURL: "" },
-//   { text: "API 602 Forged Valve", downloadURL: "", imageURL: "" },
-// ];
-// const quickSheetList = [
-//   { text: "Split Body Ball Valve", downloadURL: "", imageURL: "" },
-//   { text: "Fully Welded Ball Valve", downloadURL: "", imageURL: "" },
-//   { text: "Top Entry Bal Valve", downloadURL: "", imageURL: "" },
-//   { text: "Gate Valve", downloadURL: "", imageURL: "" },
-//   { text: "Swing Check Valve", downloadURL: "", imageURL: "" },
-//   { text: "Globe Valve", downloadURL: "", imageURL: "" },
-//   { text: "Plug Valve", downloadURL: "", imageURL: "" },
-//   { text: "Instrumental Valve", downloadURL: "", imageURL: "" },
-//   { text: "Tube Fittings", downloadURL: "", imageURL: "" },
-//   { text: "API 602 Forged Valve", downloadURL: "", imageURL: "" },
-// ];
-// const certificateList = [
-//   { text: "ISO 15848-1", downloadURL: "", imageURL: "" },
-//   { text: "6D-0714 2026", downloadURL: "", imageURL: "" },
-//   { text: "F-273H1 H1", downloadURL: "", imageURL: "" },
-//   { text: "PED CE 2014 68", downloadURL: "", imageURL: "" },
-//   { text: "ISO 9001 2015", downloadURL: "", imageURL: "" },
-// ];
-
-interface Data {
+interface ReponseDataProps {
   message: string;
-  data: Product[];
+  data: ProductProps[];
 }
 
-interface Product {
+interface ProductProps {
   id: string;
   name: string;
   description: string;
@@ -65,29 +22,18 @@ interface Product {
   quicksheetFileURL: string;
 }
 
-interface DataCertificate {
-  message: string;
-  data: Certificate[];
-}
-
-interface Certificate {
-  id: string;
-  name: string;
-  coverImageURL: string;
-  fileURL: string;
-}
-
 function Box({ children }: PropsWithChildren<unknown>) {
   return (
-    <div className="rounded-lg block pb-10 h-40 lg:h-96 w-full">{children}</div>
+    <div className="w-[100px] h-[100px]  rounded-[20px] lg:w-[200px] lg:h-[200px]">
+      {children}
+    </div>
   );
 }
 
 const ResourcePage = () => {
-  const [data, setData] = useState<Data>();
-  const [certificateData, setCertificateData] = useState<DataCertificate>();
+  const [data, setData] = useState<ReponseDataProps>();
+
   const [isLoading, setLoading] = useState(true);
-  const [isLoadingCertificate, setLoadingCertificate] = useState(true);
 
   useEffect(() => {
     fetch("/api/products")
@@ -95,44 +41,26 @@ const ResourcePage = () => {
       .then((data) => {
         setData(data);
         setLoading(false);
-        fetch("/api/certificate")
-          .then((res) => res.json())
-          .then((data) => {
-            setCertificateData(data);
-            setLoadingCertificate(false);
-          });
       });
   }, []);
 
   if (isLoading) {
     return (
-      <div className="container w-full ">
-        <div className="">
-          <Skeleton
-            className="h-full rounded-lg"
-            wrapper={Box}
-            count={3}></Skeleton>
-        </div>
+      <div className="container w-full">
+        <Skeleton
+          className="h-full rounded-lg"
+          wrapper={Box}
+          inline
+          width={100}
+          count={5}></Skeleton>
       </div>
     );
   }
-  if (isLoadingCertificate) {
-    return (
-      <div className="container w-full ">
-        <div className="">
-          <Skeleton
-            className="h-full rounded-lg"
-            wrapper={Box}
-            count={1}></Skeleton>
-        </div>
-      </div>
-    );
-  }
-  if (!data) return <p>No profile data</p>;
-  if (!certificateData) return <p>No profile data</p>;
 
-  const products: Product[] = data.data;
-  const certificate: Certificate[] = certificateData.data;
+  if (!data) return <p>No product data</p>;
+
+  const products: ProductProps[] = data.data;
+
   return (
     <div className="container w-full flex flex-col  gap-[24px] items-center lg:items-start">
       <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
@@ -179,17 +107,7 @@ const ResourcePage = () => {
       </div>
       <div className="flex flex-col gap-[28px] items-center lg:items-start w-full">
         <SectionTitle title="Certification" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center  lg:justify-center lg:gap-x-[48px]">
-          {certificate.map((item, index) => {
-            return (
-              <ResourcesComponent
-                key={index}
-                text={item.name}
-                downloadURL={item.fileURL}
-                coverURL={item.coverImageURL}></ResourcesComponent>
-            );
-          })}
-        </div>
+        <CertificateComponent></CertificateComponent>
       </div>
     </div>
   );

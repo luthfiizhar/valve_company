@@ -24,11 +24,6 @@ interface DataProductProps {
   data: ProductProps;
 }
 
-interface DataProductInfoProps {
-  message: string;
-  data: ProductInfoResultProps;
-}
-
 interface ProductProps {
   id: string;
   name: string;
@@ -42,17 +37,6 @@ interface ProductProps {
 interface SpecificationProps {
   label: string;
   text: string;
-}
-
-interface ProductInfoResultProps {
-  id: string;
-  name: string;
-  productInfo: [ProductInfoProps];
-}
-
-interface ProductInfoProps {
-  title: string;
-  file: string;
 }
 
 function Box({ children }: PropsWithChildren<unknown>) {
@@ -69,8 +53,7 @@ const DetailProduct = () => {
   const id = pathArray[pathArray.length - 1];
 
   const [data, setData] = useState<DataProductProps>();
-  const [dataProductInfo, setDataProductInfo] =
-    useState<DataProductInfoProps>();
+
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -78,12 +61,7 @@ const DetailProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        fetch(`/api/product_info/${id}`)
-          .then((res) => res.json())
-          .then((data) => {
-            setDataProductInfo(data);
-            setLoading(false);
-          });
+        setLoading(false);
       });
   }, [id]);
 
@@ -99,12 +77,9 @@ const DetailProduct = () => {
     );
   }
   if (!data) return <p>No profile data</p>;
-  if (!dataProductInfo) return <p>No profile data</p>;
+
   const product: ProductProps = data.data;
   const spec: SpecificationProps[] = product.specification;
-
-  const productInfoRes: ProductInfoResultProps = dataProductInfo?.data;
-  const productInfo: ProductInfoProps[] = productInfoRes?.productInfo;
 
   let isLongDesc = false;
   if (spec.length > 5) {
@@ -156,15 +131,8 @@ const DetailProduct = () => {
       </div>
       <div className="flex flex-col gap-[16px] lg:pt-[16px]">
         <ProductInfoTitle text="Product Information"></ProductInfoTitle>
-        <div className="flex flex-col gap-[16px] lg:flex-wrap lg:max-h-[100px] lg:h-auto lg:gap-x-[48px] lg:w-min">
-          {productInfo.map((item: { title: string; file: string }, index) => {
-            return (
-              <ProductInfoDownload
-                key={index}
-                title={item.title}
-                downloadURL={item.file}></ProductInfoDownload>
-            );
-          })}
+        <div className="">
+          <ProductInfoDownload></ProductInfoDownload>
         </div>
       </div>
     </div>

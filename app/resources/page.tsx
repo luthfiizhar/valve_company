@@ -24,9 +24,7 @@ interface ProductProps {
 
 function Box({ children }: PropsWithChildren<unknown>) {
   return (
-    <div className="w-[100px] h-[100px]  rounded-[20px] lg:w-[200px] lg:h-[200px]">
-      {children}
-    </div>
+    <div className="rounded-lg block pb-10 h-40 lg:h-96 w-full">{children}</div>
   );
 }
 
@@ -50,8 +48,6 @@ const ResourcePage = () => {
         <Skeleton
           className="h-full rounded-lg"
           wrapper={Box}
-          inline
-          width={100}
           count={5}></Skeleton>
       </div>
     );

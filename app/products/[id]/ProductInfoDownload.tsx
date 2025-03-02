@@ -7,11 +7,6 @@ import Link from "next/link";
 
 import Skeleton from "react-loading-skeleton";
 
-interface ProductInfoDownloadProps {
-  title: string;
-  downloadURL: string;
-}
-
 interface ProductInfoResultProps {
   id: string;
   name: string;

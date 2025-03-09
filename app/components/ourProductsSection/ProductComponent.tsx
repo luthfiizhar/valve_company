@@ -20,9 +20,7 @@ const ProductComponent = ({
 }: ProductProps) => {
   return (
     <div
-      className={`flex flex-col gap-[10px] w-full lg:flex-row lg:gap-[64px]  lg:items-center ${
-        index != 1 && "border-t border-primary"
-      }`}>
+      className={`flex flex-col gap-[10px] w-full lg:flex-row lg:gap-[64px]  lg:items-center shadow-lg rounded-lg px-4 py-4`}>
       <div className="px-[20px] text-[24px] pt-2 text-primary font-semibold text-left lg:hidden">
         {title}
       </div>

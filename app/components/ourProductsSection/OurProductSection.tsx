@@ -34,11 +34,11 @@ function Box({ children }: PropsWithChildren<unknown>) {
 }
 
 const OurProductSection = () => {
-  const [data, setData] = useState<Data>();
+  const [data, setData] = useState<Product[]>();
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/products")
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -74,7 +74,7 @@ const OurProductSection = () => {
           <SectionTitle title="Our Product" isOneLine={false}></SectionTitle>
         </div>
         <ul className="flex flex-col gap-[32px] w-full lg:w-full justify-center">
-          {data!.data.map((item, index) => {
+          {data.map((item, index) => {
             console.log(item);
             return (
               <motion.li

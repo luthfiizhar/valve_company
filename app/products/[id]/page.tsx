@@ -1,7 +1,7 @@
 "use client";
 import { PropsWithChildren } from "react";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import SectionTitle from "@/app/components/SectionTitle";
 import ProductInfoTitle from "./ProductInfoTitle";
 import ProductSpecComponent from "./ProductSpecComponent";
@@ -19,24 +19,30 @@ import Skeleton from "react-loading-skeleton";
 //   }));
 // }
 
-interface DataProductProps {
-  message: string;
-  data: ProductProps;
-}
+// interface DataProductProps {
+//   message: string;
+//   data: ProductProps;
+// }
 
 interface ProductProps {
   id: string;
   name: string;
   description: string;
   highlightImageURL: string;
-  bigImagesURL: string;
-  smallImagesURL: string;
+  bigImageURL: string;
+  smallImageURL: string;
+  productInfo: [ProductInfoProps];
   specification: [SpecificationProps];
 }
 
 interface SpecificationProps {
   label: string;
   text: string;
+}
+
+interface ProductInfoProps {
+  title: string;
+  downloadURL: string;
 }
 
 function Box({ children }: PropsWithChildren<unknown>) {
@@ -48,22 +54,24 @@ function Box({ children }: PropsWithChildren<unknown>) {
 }
 
 const DetailProduct = () => {
-  const path = usePathname();
-  const pathArray = path.split("/");
-  const id = pathArray[pathArray.length - 1];
+  const param = useParams<{ id: string }>();
 
-  const [data, setData] = useState<DataProductProps>();
+  const [data, setData] = useState<ProductProps>();
 
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/products/${id}`)
-      .then((res) => res.json())
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product/${param.id}`)
+      .then((res) => {
+        console.log(res);
+
+        return res.json();
+      })
       .then((data) => {
         setData(data);
         setLoading(false);
       });
-  }, [id]);
+  }, [param.id]);
 
   if (isLoading) {
     return (
@@ -78,8 +86,9 @@ const DetailProduct = () => {
   }
   if (!data) return <p>No profile data</p>;
 
-  const product: ProductProps = data.data;
-  const spec: SpecificationProps[] = product.specification;
+  // const product: ProductProps = data.data;
+  const spec: SpecificationProps[] = data.specification;
+  const productInfo: ProductInfoProps[] = data.productInfo;
 
   let isLongDesc = false;
   if (spec.length > 5) {
@@ -90,11 +99,11 @@ const DetailProduct = () => {
   // let smallImage = details["smallImages"];
   return (
     <div className="container w-full flex flex-col gap-[20px]">
-      <SectionTitle title={product.name} isOneLine={true}></SectionTitle>
+      <SectionTitle title={data.name} isOneLine={true}></SectionTitle>
       <div className="w-full h-[267px] rounded-[30px] lg:h-[700px] bg-slate-500">
         <div className="relative w-full h-full content-center bg-clip-content">
           <Image
-            src={product.bigImagesURL}
+            src={data.bigImageURL}
             fill
             className="object-cover  rounded-[30px]"
             alt=""></Image>
@@ -102,12 +111,12 @@ const DetailProduct = () => {
       </div>
       <div className="flex flex-col gap-[20px] lg:flex-row lg:gap-[32px] lg:items-center">
         <div className="text-primary text-[16px] font-medium whitespace-pre-line lg:text-[24px]">
-          {product.description}
+          {data.description}
         </div>
         <div className="bg-slate-400 w-full h-[212px] rounded-[30px] lg:h-[420px] lg:w-[460px] lg:flex-none">
           <div className="relative w-full h-full content-center bg-clip-content">
             <Image
-              src={product.smallImagesURL}
+              src={data.smallImageURL}
               fill
               className="object-cover  rounded-[30px]"
               alt=""></Image>
@@ -131,8 +140,15 @@ const DetailProduct = () => {
       </div>
       <div className="flex flex-col gap-[16px] lg:pt-[16px]">
         <ProductInfoTitle text="Product Information"></ProductInfoTitle>
-        <div className="">
-          <ProductInfoDownload></ProductInfoDownload>
+        <div className="flex flex-col gap-[16px] lg:flex-wrap lg:max-h-[100px] lg:h-auto lg:gap-x-[48px] lg:max-w-[500px]">
+          {productInfo.map((info, index) => {
+            return (
+              <ProductInfoDownload
+                key={index}
+                title={info.title}
+                downloadURL={info.downloadURL}></ProductInfoDownload>
+            );
+          })}
         </div>
       </div>
     </div>

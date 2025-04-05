@@ -116,7 +116,7 @@ const DetailProduct = () => {
         <div className="bg-slate-400 w-full h-[212px] rounded-[30px] lg:h-[420px] lg:w-[460px] lg:flex-none">
           <div className="relative w-full h-full content-center bg-clip-content">
             <Image
-              src={data.smallImageURL}
+              src={data.highlightImageURL}
               fill
               className="object-cover  rounded-[30px]"
               alt=""></Image>

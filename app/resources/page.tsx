@@ -5,10 +5,6 @@ import ResourcesComponent from "./ResourcesComponent";
 import { useState, useEffect, PropsWithChildren } from "react";
 import CertificateComponent from "./CertificateComponent";
 
-interface ReponseDataProps {
-  message: string;
-  data: ProductProps[];
-}
 
 interface ProductProps {
   id: string;
@@ -29,7 +25,7 @@ function Box({ children }: PropsWithChildren<unknown>) {
 }
 
 const ResourcePage = () => {
-  const [data, setData] = useState<ReponseDataProps>();
+  const [data, setData] = useState<ProductProps[]>();
 
   const [isLoading, setLoading] = useState(true);
 
@@ -55,7 +51,7 @@ const ResourcePage = () => {
 
   if (!data) return <p>No product data</p>;
 
-  const products: ProductProps[] = data.data;
+  const products: ProductProps[] = data;
 
   return (
     <div className="container w-full flex flex-col  gap-[24px] items-center lg:items-start">

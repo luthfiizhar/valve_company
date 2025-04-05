@@ -3,16 +3,11 @@ import Skeleton from "react-loading-skeleton";
 import ResourcesComponent from "./ResourcesComponent";
 import { useState, useEffect, PropsWithChildren } from "react";
 
-interface ResponseProps {
-  message: string;
-  data: Certificate[];
-}
-
-interface Certificate {
+interface CertificateProps {
   id: string;
-  name: string;
-  coverImageURL: string;
-  fileURL: string;
+  filename: string;
+  thumbnailImage: string;
+  path: string;
 }
 
 function Box({ children }: PropsWithChildren<unknown>) {
@@ -22,7 +17,7 @@ function Box({ children }: PropsWithChildren<unknown>) {
 }
 
 const CertificateComponent = () => {
-  const [data, setData] = useState<ResponseProps>();
+  const [data, setData] = useState<CertificateProps[]>();
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -48,7 +43,7 @@ const CertificateComponent = () => {
   }
   if (!data) return <p>No Certificate data</p>;
 
-  const certificate: Certificate[] = data.data;
+  const certificate: CertificateProps[] = data;
 
   return (
     <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center  lg:justify-center lg:gap-x-[48px]">
@@ -56,9 +51,9 @@ const CertificateComponent = () => {
         return (
           <ResourcesComponent
             key={index}
-            text={item.name}
-            downloadURL={item.fileURL ?? "-"}
-            coverURL={item.coverImageURL}></ResourcesComponent>
+            text={item.filename}
+            downloadURL={item.path ?? "-"}
+            coverURL={item.thumbnailImage}></ResourcesComponent>
         );
       })}
     </div>

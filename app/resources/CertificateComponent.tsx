@@ -26,7 +26,7 @@ const CertificateComponent = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/certificate")
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/certificate/`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

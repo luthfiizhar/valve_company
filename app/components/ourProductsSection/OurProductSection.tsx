@@ -33,7 +33,7 @@ const OurProductSection = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product`)
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product/`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

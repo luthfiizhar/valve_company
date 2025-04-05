@@ -34,7 +34,7 @@ const ResourcePage = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/products")
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product/`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

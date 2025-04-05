@@ -13,11 +13,6 @@ const cardVariants = {
   animate: { y: 0, opacity: 1 },
 };
 
-interface Data {
-  message: string;
-  data: [Product];
-}
-
 interface Product {
   id: string;
   name: string;

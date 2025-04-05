@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import heroImage from "@/public/images/hero_2.jpg";
+import heroImage from "@/public/images/hero_2.png";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 

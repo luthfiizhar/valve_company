@@ -205,7 +205,7 @@ const Footer = () => {
           </div>
           <div className="items-start text-left">
             <span className="text-[22px]">
-              Copyright © 2024. All rights reserved.
+              Copyright © 2025. All rights reserved.
             </span>
           </div>
         </div>

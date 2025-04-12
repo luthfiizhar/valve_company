@@ -78,7 +78,7 @@ const ContactPage = () => {
             <div className="w-[428px] h-[400px] bg-slate-500">
               <div className="w-full h-full object-contain">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.2231345198907!2d28.919855525515715!3d40.181847419902425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca15d8a562c521%3A0x218a8ccffb84c83d!2sKURVALF%20MAKINA%20LTD%20STI!5e0!3m2!1sen!2str!4v1736786385709!5m2!1sen!2str"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3060.6830365836818!2d32.812793299999996!3d39.9037283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDU0JzEzLjQiTiAzMsKwNDgnNDYuMSJF!5e0!3m2!1sid!2sid!4v1744455715708!5m2!1sid!2sid"
                   width="600"
                   height="450"
                   // allowfullscreen=""

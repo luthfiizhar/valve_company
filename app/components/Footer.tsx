@@ -37,7 +37,7 @@ const aboutUsButtons = [
   { text: "Resource", link: "/resources" },
 ];
 const contactsInfo = [
-  { text: "stockofvalve@stockofvalf.com" },
+  { text: "stockofvalf@stockofvalf.com" },
   { text: "+90 541 190 2903" },
   {
     text: "Kızılırmak Mah. 1450 Sok. No: 18, Köprülü Plaza, Kat No:6 Daire No: 23, Çankaya, Ankara, TÜRKİYE",

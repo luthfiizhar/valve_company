@@ -43,26 +43,11 @@ const ProductComponent = ({
             sizes="100vw"
             quality={100}
             fill
-            className="object-contain"></Image>
-          {isHovering ? (
-            <div className="absolute w-full h-full rounded-[20px] bg-black bg-opacity-50">
+            className="object-cover scale-90 hover:scale-100 hover:transition-transform"></Image>
+          {!isHovering ? (
+            <div className="absolute w-full h-full rounded-[20px] bg-black bg-opacity-10">
               <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                <div className="flex flex-row gap-[8px]">
-                  {/* <Link href={downloadURL} target="_blank" download>
-                    <Button
-                      className="rounded-[4px] lg:rounded-[8px]"
-                      size={"sm"}>
-                      <BsDownload></BsDownload>
-                    </Button>
-                  </Link> */}
-                  <Link href={`/products/${encodeURIComponent(id)}`}>
-                    <Button
-                      className="rounded-[4px] lg:rounded-[8px]"
-                      size={"icon_lg"}>
-                      <BsBoxArrowUpRight></BsBoxArrowUpRight>
-                    </Button>
-                  </Link>
-                </div>
+                
               </div>
             </div>
           ) : (

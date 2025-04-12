@@ -8,7 +8,7 @@ export default function NavigationBar() {
   return (
     <header className="py-[16px] text-black">
       <div className="h-max mx-auto flex justify-between items-center px-[16px]">
-        <div className=" h-[48px] w-[56px] lg:h-[72px] lg:w-[120px] lg:flex-none">
+        <div className=" h-[48px] w-[56px] lg:h-[84px] lg:w-[168px] lg:flex-none">
           <div className="relative h-full w-full object-cover items-center">
             <Image
               src={logoBlack}

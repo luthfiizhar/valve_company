@@ -9,7 +9,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section className="container w-full max-auto">
-      <div className=" flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px] bg-primary bg-opacity-20 rounded-2xl p-8 lg:p-20 mt-8 lg:items-start">
+      <div className=" flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px] bg-primary bg-opacity-20 rounded-2xl p-8 lg:p-16 mt-8 lg:items-start">
         <div className="order-2 lg:order-1 w-full flex flex-col items-center lg:items-start gap-[24px]">
           <div className="flex flex-col text-primary text-[16px] lg:text-[20px]">
             <p className="whitespace-pre-line">

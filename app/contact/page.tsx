@@ -9,17 +9,7 @@ import {
   HiOutlineLocationMarker,
 } from "react-icons/hi";
 import ContactInfoComponent from "./ContactInfoComponent";
-// import { FormEvent } from "react";
 import { useToast } from "@/hooks/use-toast";
-// import {
-//   Select,
-//   SelectContent,
-//   SelectGroup,
-//   SelectItem,
-//   SelectLabel,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

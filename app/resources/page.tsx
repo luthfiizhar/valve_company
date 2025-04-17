@@ -51,10 +51,6 @@ const ResourcePage = () => {
 
   if (!data) return <p>No product data</p>;
 
-  const products: ProductProps[] = data;
-
-  console.log(data.filter((item) => item.userManualFileURL != "-"));
-
   const userManuals: ProductProps[] = data.filter((item) => item.userManualFileURL != "-");
 
   const catalogues: ProductProps[] = data.filter((item) => item.catalogueFileURL != "-");

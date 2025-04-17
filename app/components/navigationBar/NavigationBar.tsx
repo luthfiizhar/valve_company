@@ -2,7 +2,7 @@ import React from "react";
 import NavButton from "./NavButton";
 import Image from "next/image";
 import MobileNav from "./MobileNav";
-import logoBlack from "@/public/images/logo_black.svg";
+import logoBlack from "@/public/images/SOV_logo.svg";
 
 export default function NavigationBar() {
   return (

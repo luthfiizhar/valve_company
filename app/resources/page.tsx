@@ -53,12 +53,22 @@ const ResourcePage = () => {
 
   const products: ProductProps[] = data;
 
+  console.log(data.filter((item) => item.userManualFileURL != "-"));
+
+  const userManuals: ProductProps[] = data.filter((item) => item.userManualFileURL != "-");
+
+  const catalogues: ProductProps[] = data.filter((item) => item.catalogueFileURL != "-");
+
+  const quicksheets: ProductProps[] = data.filter((item) => item.quicksheetFileURL != "-");
+
+
+
   return (
     <div className="container w-full flex flex-col  gap-[24px] items-center lg:items-start">
       <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
         <SectionTitle title="User Manual" isOneLine={true}></SectionTitle>
         <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px]">
-          {products.map((item, index) => {
+          {userManuals.map((item, index) => {
             return (
               <ResourcesComponent
                 key={index}
@@ -72,7 +82,7 @@ const ResourcePage = () => {
       <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
         <SectionTitle title="Catalogue" isOneLine={true}></SectionTitle>
         <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px]">
-          {products.map((item, index) => {
+          {catalogues.map((item, index) => {
             return (
               <ResourcesComponent
                 key={index}
@@ -86,7 +96,7 @@ const ResourcePage = () => {
       <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
         <SectionTitle title="Quick Sheet" isOneLine={true}></SectionTitle>
         <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px] ">
-          {products.map((item, index) => {
+          {quicksheets.map((item, index) => {
             return (
               <ResourcesComponent
                 key={index}

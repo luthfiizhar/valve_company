@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import heroImage from "@/public/images/hero_2.png";
-import backgroundImage from "@/public/images/background_home.png"
+import backgroundImage from "@/public/images/home_picture.png"
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ const HeroSection = () => {
       zIndex: "-1",
     }}>
       <div className="container w-full max-auto h-auto mb-6">
-        <div className=" flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px] bg-accent bg-opacity-90 rounded-2xl p-8 lg:p-16 mt-8 lg:items-start">
+        <div className=" flex flex-col lg:flex-row  gap-[20px] lg:gap-[32px] bg-accent bg-opacity-90  p-8 lg:p-16 mt-8 lg:items-start">
           <div className="order-2 lg:order-1 w-full flex flex-col items-center lg:items-start gap-[24px]">
             <div className="flex flex-col text-primary text-[16px] lg:text-[20px]">
               <p className="whitespace-pre-line">
@@ -35,7 +35,7 @@ const HeroSection = () => {
           </div>
           <AnimatePresence>
             <div className="order-1 lg:order-2 block max-w-full h-[240px] lg:max-w-[480px] lg:min-w-[480px] lg:h-[300px] lg:content-center">
-              <div className="relative h-full w-full content-center object-contain rounded-2xl overflow-hidden">
+              <div className="relative h-full w-full content-center object-contain  overflow-hidden">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{

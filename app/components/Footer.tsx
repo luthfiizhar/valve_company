@@ -4,6 +4,7 @@ import Image from "next/image";
 // import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
 import appstoreImage from "@/public/images/icons/app_store.png";
 import playstoreImage from "@/public/images/icons/play_store.png";
+import footerLogo from "@/public/images/logo_white.svg";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
@@ -49,13 +50,12 @@ const Footer = () => {
     <footer className="bg-[#1F1F1F] px-[10px] py-[20px] mt-[32px]">
       <div className="flex flex-col gap-[32px] text-[#D1D1D1] lg:hidden">
         <div className="w-full items-center flex flex-col gap-[12px]">
-          <div className="h-[36px] w-[42px] lg:h-[64px] lg:w-[64px]">
+          <div className="relative h-[36px] w-[42px] lg:h-[64px] lg:w-[64px]">
             <Image
-              src={"/images/footer_logo.png"}
+              src={footerLogo}
               className="object-cover h-[36px] w-[42px]  lg:w-[62px] lg:h-[64px]"
               alt=""
-              width={36}
-              height={42}></Image>
+              fill></Image>
           </div>
           <div className="text-[16px] text-center">
             Your high quality valve for a secure connection

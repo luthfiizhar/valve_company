@@ -21,7 +21,7 @@ const infoList = [
   },
   {
     icon: <HiOutlineMail size={28}></HiOutlineMail>,
-    text: "stockofvalf@stockofvalv.com",
+    text: "stockofvalf@stockofvalf.com",
   },
   { icon: <FaWhatsapp size={28}></FaWhatsapp>, text: "+09 876 54 321" },
   {
@@ -79,7 +79,7 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-[24px] items-start w-full lg:flex-row lg:flex-wrap">
+          <div className="flex flex-col gap-[24px] items-start w-full lg:grid lg:grid-cols-2 lg:gap-x-[0px]">
             {infoList.map((info, index) => {
               return (
                 <ContactInfoComponent
@@ -113,7 +113,7 @@ const ContactPage = () => {
             id="topic"
             name="topic"
             placeholder="Subject"
-            // required
+          // required
           />
           <Input
             type="name"

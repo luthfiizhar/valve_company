@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import heroImage from "@/public/images/hero_2.png";
-import backgroundImage from "@/public/images/home_picture.png"
+import heroImage from "@/public/images/hero_pict.png";
+import backgroundImage from "@/public/images/background_home.png"
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 

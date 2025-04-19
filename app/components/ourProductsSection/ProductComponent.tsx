@@ -34,7 +34,7 @@ const ProductComponent = ({
         {
           isHovering ? <div className={`hidden lg:inline-block w-[2px]  bg-primary  ${index % 2 !== 0 ? "lg:order-2 ml-[24px]" : "lg:order-1 mr-[24px]"}`}>
 
-          </div> : <div className={`lg:inline-block w-[2px]  bg-opacity-0 ${index % 2 !== 0 ? "lg:order-2 ml-[24px]" : "lg:order-1 mr-[24px] "}`}></div>
+          </div> : <div className={`hidden lg:inline-block w-[2px]  bg-opacity-0 ${index % 2 !== 0 ? "lg:order-2 ml-[24px]" : "lg:order-1 mr-[24px] "}`}></div>
         }
 
         <div
@@ -47,7 +47,7 @@ const ProductComponent = ({
             sizes="100vw"
             quality={100}
             fill
-            className="object-cover  hover:transition-transform"></Image>
+            className="object-contain hover:transition-transform"></Image>
           {!isHovering ? (
             <div className="flex flex-row h-full w-full items-center lg:gap-[16px]">
               <div className="absolute w-full h-full  bg-sky-600 bg-opacity-10">

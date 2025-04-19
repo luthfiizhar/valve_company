@@ -46,7 +46,7 @@ const CertificateComponent = () => {
   const certificate: CertificateProps[] = data;
 
   return (
-    <div className="w-full flex flex-row flex-wrap gap-x-[16px] gap-y-[28px] justify-start  lg:justify-start lg:gap-x-[48px]">
+    <div className="w-full flex flex-row flex-wrap gap-x-[8px] gap-y-[28px] justify-start  lg:justify-start lg:gap-x-[48px]">
       {certificate.map((item, index) => {
         return (
           <ResourcesComponent

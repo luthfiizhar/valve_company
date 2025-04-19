@@ -63,7 +63,7 @@ const ResourcePage = () => {
     <div className="container w-full flex flex-col gap-[24px] items-center lg:items-start">
       <div className="flex flex-col gap-[28px] items-start lg:items-start  w-full">
         <SectionTitle title="Catalogue" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[16px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px]">
+        <div className="w-full flex flex-row flex-wrap gap-x-[8px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px]">
           {catalogues.map((item, index) => {
             return (
               <ResourcesComponent
@@ -77,7 +77,7 @@ const ResourcePage = () => {
       </div>
       <div className="flex flex-col gap-[28px] items-start lg:items-start  w-full">
         <SectionTitle title="Quick Sheet" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[16px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px] ">
+        <div className="w-full flex flex-row flex-wrap gap-x-[8px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px] ">
           {quicksheets.map((item, index) => {
             return (
               <ResourcesComponent
@@ -91,7 +91,7 @@ const ResourcePage = () => {
       </div>
       <div className="flex flex-col gap-[28px] items-start lg:items-start  w-full">
         <SectionTitle title="User Manual" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[16px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px]">
+        <div className="w-full flex flex-row flex-wrap gap-x-[8px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px]">
           {userManuals.map((item, index) => {
             return (
               <ResourcesComponent

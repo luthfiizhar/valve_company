@@ -39,19 +39,26 @@ const ContactPage = () => {
 
     const formData = new FormData(event.target);
 
-    const response = await fetch("/api/mail", {
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email/backgroundtasks`, {
       method: "POST",
       body: formData,
     });
 
     const data = await response.json();
 
-    if (data["status"] === 200) {
+    if (response.status === 200) {
       toast({
         title: "Thank You",
         description: "Your message has been sent.",
       });
       formRef.current!.reset();
+    }
+    else {
+      toast({
+        title: "Error",
+        description: data["message"],
+      });
     }
   }
   return (

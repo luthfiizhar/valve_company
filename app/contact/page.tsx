@@ -64,20 +64,15 @@ const ContactPage = () => {
           <h1 className="text-[36px] text-start">Contact Us</h1>
         </div>
         <div className="w-full flex flex-col gap-[24px] items-start lg:w-[480px] lg:order-2">
-          <div className="items-center">
-            <div className="w-[428px] h-[400px] bg-slate-500">
-              <div className="w-full h-full object-contain">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3060.6830365836818!2d32.812793299999996!3d39.9037283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDU0JzEzLjQiTiAzMsKwNDgnNDYuMSJF!5e0!3m2!1sid!2sid!4v1744455715708!5m2!1sid!2sid"
-                  width="600"
-                  height="450"
-                  // allowfullscreen=""
-                  loading="lazy"
-                  // referrerpolicy="no-referrer-when-downgrade"
-                  style={{ border: 0 }}
-                  className="object-contain w-[428px] h-[400px]"></iframe>
-              </div>
-            </div>
+          <div className="w-full lg:w-[428px] h-[400px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3060.6830365836818!2d32.812793299999996!3d39.9037283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDU0JzEzLjQiTiAzMsKwNDgnNDYuMSJF!5e0!3m2!1sid!2sid!4v1744455715708!5m2!1sid!2sid"
+
+              // allowfullscreen=""
+              loading="lazy"
+              // referrerpolicy="no-referrer-when-downgrade"
+              style={{ border: 0 }}
+              className="object-contain lg:w-[428px] h-[400px]"></iframe>
           </div>
           <div className="flex flex-col gap-[24px] items-start w-full lg:grid lg:grid-cols-2 lg:gap-x-[0px]">
             {infoList.map((info, index) => {

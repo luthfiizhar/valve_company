@@ -24,21 +24,21 @@ const ProductComponent = ({
   const onMouseLeave = () => setIsHovered(false);
   return (
     <div
-      className={`flex flex-col gap-[10px] w-full lg:flex-row lg:gap-[64px]  lg:items-center shadow-lg px-4 py-4 lg:px-0 lg:py-0 `}>
+      className={`flex flex-col gap-[10px] w-full lg:flex-row lg:gap-[64px]  lg:items-center  px-4 py-4 lg:px-0 lg:py-0 `}>
       <div className="px-[20px] text-[24px] pt-2 text-primary font-semibold text-left lg:hidden">
         {title}
       </div>
       <div
-        className={`flex justify-center content-center object-cover w-full h-[360px]  lg:flex-none lg:w-[512px] lg:h-[512px]  lg:object-contain ${index % 2 !== 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
+        className={`flex justify-center content-center object-cover w-full h-[360px] lg:flex-none lg:w-[534px] lg:h-[512px]  lg:object-contain ${index % 2 !== 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
           }`}>
         {
-          isHovering ? <div className={`hidden lg:inline-block w-[2px] self-stretch bg-primary  ${index % 2 !== 0 ? "lg:order-2" : "lg:order-1"}`}>
+          isHovering ? <div className={`hidden lg:inline-block w-[2px]  bg-primary  ${index % 2 !== 0 ? "lg:order-2 ml-[24px]" : "lg:order-1 mr-[24px]"}`}>
 
-          </div> : <div className={`${index % 2 !== 0 ? "lg:order-2" : "lg:order-1"}`}></div>
+          </div> : <div className={`lg:inline-block w-[2px]  bg-opacity-0 ${index % 2 !== 0 ? "lg:order-2 ml-[24px]" : "lg:order-1 mr-[24px] "}`}></div>
         }
 
         <div
-          className={`relative h-full w-full object-fill items-center ${index % 2 !== 0 ? "lg:order-1" : "lg:order-2"}`}
+          className={`relative h-full w-full object-fill items-center lg:w-[512px] ${index % 2 !== 0 ? "lg:order-1" : "lg:order-2"}`}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}>
           <Image
@@ -47,7 +47,7 @@ const ProductComponent = ({
             sizes="100vw"
             quality={100}
             fill
-            className="object-cover scale-90 hover:scale-100 hover:transition-transform"></Image>
+            className="object-cover  hover:transition-transform"></Image>
           {!isHovering ? (
             <div className="flex flex-row h-full w-full items-center lg:gap-[16px]">
               <div className="absolute w-full h-full  bg-sky-600 bg-opacity-10">

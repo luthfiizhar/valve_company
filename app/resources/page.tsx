@@ -60,24 +60,10 @@ const ResourcePage = () => {
 
 
   return (
-    <div className="container w-full flex flex-col  gap-[24px] items-center lg:items-start">
-      <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
-        <SectionTitle title="User Manual" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px]">
-          {userManuals.map((item, index) => {
-            return (
-              <ResourcesComponent
-                key={index}
-                text={item.name}
-                downloadURL={item.userManualFileURL}
-                coverURL={item.userManualCoverImageURL}></ResourcesComponent>
-            );
-          })}
-        </div>
-      </div>
-      <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
+    <div className="container w-full flex flex-col gap-[24px] items-center lg:items-start">
+      <div className="flex flex-col gap-[28px] items-start lg:items-start  w-full">
         <SectionTitle title="Catalogue" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px]">
+        <div className="w-full flex flex-row flex-wrap gap-x-[16px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px]">
           {catalogues.map((item, index) => {
             return (
               <ResourcesComponent
@@ -89,9 +75,9 @@ const ResourcePage = () => {
           })}
         </div>
       </div>
-      <div className="flex flex-col gap-[28px] items-center lg:items-start  w-full">
+      <div className="flex flex-col gap-[28px] items-start lg:items-start  w-full">
         <SectionTitle title="Quick Sheet" isOneLine={true}></SectionTitle>
-        <div className="w-full flex flex-row flex-wrap gap-x-[24px] gap-y-[28px] justify-center lg:justify-center lg:gap-x-[48px] ">
+        <div className="w-full flex flex-row flex-wrap gap-x-[16px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px] ">
           {quicksheets.map((item, index) => {
             return (
               <ResourcesComponent
@@ -103,7 +89,23 @@ const ResourcePage = () => {
           })}
         </div>
       </div>
-      <div className="flex flex-col gap-[28px] items-center lg:items-start w-full">
+      <div className="flex flex-col gap-[28px] items-start lg:items-start  w-full">
+        <SectionTitle title="User Manual" isOneLine={true}></SectionTitle>
+        <div className="w-full flex flex-row flex-wrap gap-x-[16px] gap-y-[28px] justify-start lg:justify-start lg:gap-x-[48px]">
+          {userManuals.map((item, index) => {
+            return (
+              <ResourcesComponent
+                key={index}
+                text={item.name}
+                downloadURL={item.userManualFileURL}
+                coverURL={item.userManualCoverImageURL}></ResourcesComponent>
+            );
+          })}
+        </div>
+      </div>
+
+
+      <div className="flex flex-col gap-[28px] items-start lg:items-start w-full">
         <SectionTitle title="Certification" isOneLine={true}></SectionTitle>
         <CertificateComponent></CertificateComponent>
       </div>

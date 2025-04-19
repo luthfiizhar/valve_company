@@ -22,7 +22,7 @@ const ResourcesComponent = ({
   // console.log(isHovering);
 
   return (
-    <div className="flex flex-col gap-[16px] w-[148px] items-center lg:w-[180px]">
+    <div className="flex flex-col gap-[16px] w-[140px] items-center lg:w-[180px]">
       <div
         className="w-[100px] h-[100px]  rounded-[20px] lg:w-[200px] lg:h-[200px] "
         onMouseEnter={onMouseEnter}

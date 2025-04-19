@@ -4,7 +4,7 @@ import OurProductSection from "./components/ourProductsSection/OurProductSection
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-28">
+    <div className="flex flex-col gap-18 lg:gap-24">
       <HeroSection></HeroSection>
 
       <WhyUsSection></WhyUsSection>

@@ -68,7 +68,7 @@ const OurProductSection = () => {
         <div className="py-[10px] lg:py-0">
           <SectionTitle title="Our Product" isOneLine={false}></SectionTitle>
         </div>
-        <ul className="flex flex-col gap-[32px] w-full lg:w-full justify-center">
+        <ul className="flex flex-col w-full lg:w-full justify-center">
           {data.map((item, index) => {
             console.log(item);
             return (

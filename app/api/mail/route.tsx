@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
     host: "smtp.gmail.com",
     secure: false, // true for 465, false for other ports
     auth: {
-      user: process.env.EMAIL_FROM,
-      pass: process.env.EMAIL_APP_PASSWORD,
+      user: "luthfiizhar@gmail.com",
+      pass: "pfgisjcehklxrphs",
     },
   });
 

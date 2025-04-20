@@ -24,14 +24,8 @@ const contactsInfo = [
 
 const Footer = () => {
   return (
-    <footer style={{
-      backgroundImage: `url(${backgroundImage.src})`,
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center",
-      zIndex: "-1",
-    }}>
-      <div className="bg-[#1F1F1F] bg-opacity-80 px-[10px] py-[20px] mt-[32px]">
+    <footer className="bg-primary">
+      <div className=" px-[10px] py-[20px] mt-[32px]">
         <div className="flex flex-col gap-[32px] text-[#D1D1D1] lg:hidden">
           <div className="w-full items-center flex flex-col gap-[12px]">
             <div className="relative h-[36px] w-[42px] lg:h-[64px] lg:w-[64px]">
@@ -54,7 +48,7 @@ const Footer = () => {
             })}
           </div> */}
           </div>
-          <div className="flex w-full justify-center items-center gap-[10px]">
+          {/* <div className="flex w-full justify-center items-center gap-[10px]">
             <div className=" w-[165px] h-[45px] bg-slate-300">
               <div className="relative w-full h-full">
                 <Image
@@ -73,7 +67,7 @@ const Footer = () => {
                   className="object-cover"></Image>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="items-center text-center">
             <span className="text-[16px]">
               Copyright © 2025. All rights reserved.
@@ -135,7 +129,7 @@ const Footer = () => {
                     })}
                   </div>
                 </div>
-                <div className="flex flex-col gap-[20px]  w-[165px]">
+                {/* <div className="flex flex-col gap-[20px]  w-[165px]">
                   <span className="text-[24px] text-[#FFFFFF] font-semibold">
                     Get Our App
                   </span>
@@ -183,7 +177,7 @@ const Footer = () => {
                       </motion.div>
                     </div>
                   </AnimatePresence>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="items-start text-left">

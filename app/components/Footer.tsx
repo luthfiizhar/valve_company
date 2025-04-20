@@ -2,11 +2,11 @@
 import React from "react";
 import Image from "next/image";
 // import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
-import appstoreImage from "@/public/images/icons/app_store.png";
-import playstoreImage from "@/public/images/icons/play_store.png";
+// import appstoreImage from "@/public/images/icons/app_store.png";
+// import playstoreImage from "@/public/images/icons/play_store.png";
 import footerLogo from "@/public/images/SOV_logo_White.svg";
-import backgroundImage from "@/public/images/background_home.png"
-import { AnimatePresence, motion } from "framer-motion";
+// import backgroundImage from "@/public/images/background_home.png"
+// import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
 const aboutUsButtons = [

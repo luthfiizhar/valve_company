@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import heroImage from "@/public/images/hero_pict.png";
+// import Image from "next/image";
+// import heroImage from "@/public/images/hero_pict.png";
 import backgroundImage from "@/public/images/home_bg_black_opacity.png"
-import { AnimatePresence, motion } from "framer-motion";
+// import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
 const HeroSection = () => {

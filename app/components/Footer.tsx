@@ -5,7 +5,7 @@ import Image from "next/image";
 // import appstoreImage from "@/public/images/icons/app_store.png";
 // import playstoreImage from "@/public/images/icons/play_store.png";
 import footerLogo from "@/public/images/SOV_logo_White.svg";
-// import backgroundImage from "@/public/images/background_home.png"
+import backgroundImage from "@/public/images/home_bg_black_opacity.png"
 // import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
@@ -24,9 +24,15 @@ const contactsInfo = [
 
 const Footer = () => {
   return (
-    <footer className="bg-primary">
+    <footer className="bg-primary" style={{
+      backgroundImage: `url(${backgroundImage.src})`,
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      zIndex: "-1",
+    }}>
       <div className=" px-[10px] py-[20px] mt-[32px]">
-        <div className="flex flex-col gap-[32px] text-[#D1D1D1] lg:hidden">
+        <div className="flex flex-col gap-[32px] text-white lg:hidden">
           <div className="w-full items-center flex flex-col gap-[12px]">
             <div className="relative h-[36px] w-[42px] lg:h-[64px] lg:w-[64px]">
               <Image

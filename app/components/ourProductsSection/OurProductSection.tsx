@@ -64,30 +64,32 @@ const OurProductSection = () => {
 
   return (
     <section className="pt-[36px]">
-      <div className="container w-full flex flex-col gap-[64px] items-center lg:items-start">
-        <div className="py-[10px] lg:py-0">
-          <SectionTitle title="Our Product" isOneLine={false}></SectionTitle>
+      <div className="px-0 lg:container">
+        <div className="w-full flex flex-col gap-[64px] items-center lg:items-start">
+          <div className="py-[10px] lg:py-0">
+            <SectionTitle title="Our Product" isOneLine={false}></SectionTitle>
+          </div>
+          <ul className="flex flex-col w-full lg:w-full justify-center">
+            {data.map((item, index) => {
+              console.log(item);
+              return (
+                <motion.li
+                  key={index}
+                  variants={cardVariants}
+                  initial="initial"
+                  animate="animate"
+                  transition={{ duration: 0.3, delay: 0.4 }}>
+                  <ProductComponent
+                    index={index + 1}
+                    id={item.productCode}
+                    title={item.name}
+                    desc={item.description}
+                    imageUrl={item.highlightImageURL}></ProductComponent>
+                </motion.li>
+              );
+            })}
+          </ul>
         </div>
-        <ul className="flex flex-col w-full lg:w-full justify-center">
-          {data.map((item, index) => {
-            console.log(item);
-            return (
-              <motion.li
-                key={index}
-                variants={cardVariants}
-                initial="initial"
-                animate="animate"
-                transition={{ duration: 0.3, delay: 0.4 }}>
-                <ProductComponent
-                  index={index + 1}
-                  id={item.productCode}
-                  title={item.name}
-                  desc={item.description}
-                  imageUrl={item.highlightImageURL}></ProductComponent>
-              </motion.li>
-            );
-          })}
-        </ul>
       </div>
     </section>
   );

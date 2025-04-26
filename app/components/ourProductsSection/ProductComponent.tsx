@@ -20,8 +20,8 @@ const ProductComponent = ({
   imageUrl,
 }: ProductProps) => {
   const [isHovering, setIsHovered] = useState(false);
-  const onMouseEnter = () => setIsHovered(true);
-  const onMouseLeave = () => setIsHovered(false);
+  // const onMouseEnter = () => setIsHovered(true);
+  // const onMouseLeave = () => setIsHovered(false);
   return (
     <div
       className={`flex flex-col gap-[10px] w-full lg:flex-row lg:gap-[64px]  lg:items-center  px-0 py-4 lg:px-0 lg:py-0 `}>

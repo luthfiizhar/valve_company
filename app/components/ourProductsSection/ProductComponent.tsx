@@ -25,40 +25,38 @@ const ProductComponent = ({
   return (
     <div
       className={`flex flex-col gap-[10px] w-full lg:flex-row lg:gap-[64px]  lg:items-center  px-0 py-4 lg:px-0 lg:py-0 `}>
-      <div className="px-[0px] text-[24px] pt-2 text-primary font-semibold text-left lg:hidden">
+      <div className="px-[16px] text-[24px] pt-2 text-primary font-semibold text-left lg:hidden">
         {title}
       </div>
       <div
         className={`flex justify-center content-center object-cover w-full h-[360px] lg:flex-none lg:w-[534px] lg:h-[512px]  lg:object-contain ${index % 2 !== 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
           }`}>
-        {
+        {/* {
           isHovering ? <div className={`hidden lg:inline-block w-[2px]  bg-primary  ${index % 2 !== 0 ? "lg:order-2 ml-[24px]" : "lg:order-1 mr-[24px]"}`}>
 
           </div> : <div className={`hidden lg:inline-block w-[2px]  bg-opacity-0 ${index % 2 !== 0 ? "lg:order-2 ml-[24px]" : "lg:order-1 mr-[24px] "}`}></div>
-        }
+        } */}
 
         <div
-          className={`relative h-full w-full object-fill items-center border-primary border-y-[2px] lg:border-y-0 lg:w-[512px] ${index % 2 !== 0 ? "lg:order-1" : "lg:order-2"}`}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}>
+          className={`relative h-full w-full object-fill items-center border-primary border-y-[0px] lg:border-y-0 lg:w-[512px] ${index % 2 !== 0 ? "lg:order-1" : "lg:order-2"}`}
+        >
           <Image
             src={imageUrl}
             alt=""
             sizes="100vw"
             quality={100}
             fill
-            className="object-contain hover:transition-transform "></Image>
-          {!isHovering ? (
+            className="object-cover hover:transition-transform "></Image>
+          {/* {!isHovering ? (
             <div className="flex flex-row h-full w-full items-center lg:gap-[16px]">
               <div className="absolute w-full h-full  bg-sky-600 bg-opacity-10">
                 <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-
                 </div>
               </div>
             </div>
           ) : (
             <div></div>
-          )}
+          )} */}
         </div>
       </div>
       <div
@@ -67,7 +65,7 @@ const ProductComponent = ({
         <div className="hidden lg:flex lg:text-[36px] lg:text-primary lg:font-semibold">
           {title}
         </div>
-        <div className="px-[0px] text-[18px] text-primary font-medium text-left whitespace-pre-line lg:px-0 lg:text-[20px]">
+        <div className="px-[16px] text-[18px] text-primary font-medium text-left whitespace-pre-line lg:px-0 lg:text-[20px]">
           {desc}
         </div>
         <Button

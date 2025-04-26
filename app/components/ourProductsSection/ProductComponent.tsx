@@ -19,7 +19,7 @@ const ProductComponent = ({
   desc,
   imageUrl,
 }: ProductProps) => {
-  const [isHovering, setIsHovered] = useState(false);
+  // const [isHovering, setIsHovered] = useState(false);
   // const onMouseEnter = () => setIsHovered(true);
   // const onMouseLeave = () => setIsHovered(false);
   return (

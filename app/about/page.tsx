@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImage from "@/public/images/about_us.png";
+import aboutImage from "@/public/images/about_new.jpg";
 import Image from "next/image";
 import SectionTitle from "../components/SectionTitle";
 
@@ -27,13 +27,13 @@ const AboutUsPage = () => {
             "We are thrilled to introduce Stock of Valf, a premier supplier ofhigh-quality valves tailored primarily for the oil and gas industry. Founded by industry veterans with decades of experience, our compa  ny is dedicated to meeting the niche requirements of our valued customers.\nAt Stock of Valf, we understand the unique challenges and demands of the oil and gas sector. Our comprehensive range of valves is designed to deliver exceptional performance, reliability, and durability in the most demanding environments. Whether you need standard solutions or custom designs, our team of experts is committed to providing products that exceed your expectations. We look forward to the opportunity to collaborate with you and fulfill your specific needs with our top-tier products and unparalleled service.\nSincerely,\nStock of Valf Team"
           }
         </span>
-        <div className="block max-w-full ] h-[460px] lg:max-w-[480px] lg:min-w-[480px] lg:h-[612px] lg:content-start">
+        <div className="block max-w-full  h-[612px] lg:max-w-[480px] lg:min-w-[480px] lg:h-[612px] lg:content-start">
           <div className="relative h-full w-full lg:h-full content-start object-contain overflow-hidden">
             <Image
               src={aboutImage}
               alt=""
               fill
-              className="object-cover"></Image>
+              className="object-contain lg:object-contain"></Image>
           </div>
         </div>
       </div>

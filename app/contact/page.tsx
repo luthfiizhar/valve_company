@@ -23,7 +23,7 @@ const infoList = [
     icon: <HiOutlineMail size={28}></HiOutlineMail>,
     text: "stockofvalf@stockofvalf.com",
   },
-  { icon: <FaWhatsapp size={28}></FaWhatsapp>, text: "+09 876 54 321" },
+  { icon: <FaWhatsapp size={28}></FaWhatsapp>, text: "+90 876 54 321" },
   {
     icon: <HiOutlineLocationMarker size={28}></HiOutlineLocationMarker>,
     text: "Kızılırmak Mah. 1450 Sok. No: 18, Köprülü Plaza, Kat No:6 Daire No: 23, Çankaya, Ankara, TÜRKİYE",
